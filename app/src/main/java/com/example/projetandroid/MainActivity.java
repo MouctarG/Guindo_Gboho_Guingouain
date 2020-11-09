@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         lesCategories = new ArrayList<>();
         getCategories();
 
-        //updateTest();
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navSide);
@@ -52,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         barDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getCategories();
+        String s=getString(R.string.url_Part_2_Article_Detail_Api);
     }
 
 
@@ -61,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-
-
                 try {
                     HttpsURLConnection connection = null;
                     URL url = new URL(getString(R.string.url_Categories_Api));
@@ -103,12 +101,18 @@ public class MainActivity extends AppCompatActivity {
                             Type CategorieListType = new TypeToken<List<Categorie>>() {
                             }.getType();
                             lesCategories = gson.fromJson(jsonObject.get("categories").toString(), CategorieListType);
+                            String str = "";
+                            for (Categorie c : lesCategories) {
+
+                                str += c.getName() + "\n";
+                            }
+                            System.out.println(str);
 
                             System.out.println(builder.toString());
 
                             // final String description = categories.getJSONObject(2).getString("name");
 
-                            Log.i("YAG", String.valueOf(lesCategories.size()));
+                            // Log.i("YAG", String.valueOf(lesCategories.size()));
 
                             /// System.out.println(categories.getJSONObject(0).getString("name"));
 

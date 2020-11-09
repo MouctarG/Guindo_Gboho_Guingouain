@@ -34,6 +34,9 @@
     <string name="open">ouvrir</string>
     <string name="close">Fermer</string>
     <string name="txt_mdp">Mot de passe</string>
+    <string name="url_Articles_Api"><![CDATA["https://api2.shop.com/AffiliatePublisherNetwork/v2/products?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&perPage=15&onlyMaProducts=false "]]></string>
+    <string name="url_Part_1_Article_Detail_Api">https://api2.shop.com/AffiliatePublisherNetwork/v2/products/</string>
+    <string name="url_Part_2_Article_Detail_Api"><![CDATA[\?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=CA]]></string>
 
 
 </resources>
