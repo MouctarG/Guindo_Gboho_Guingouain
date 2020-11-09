@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InscriptionActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@drawable/header"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/labelTitre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:text="Inscription"
+            android:textColor="@android:color/white"
+            android:textSize="45dp"
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_ins_pseudo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_pseudo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_ins_psd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_insMdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="@string/lbl_mdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_ins_mdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_Confirm_insMdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="@string/lbl_mdp_confirm">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_ins_mdp_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_insDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="@string/lbl_date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_ins_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_ins_enregister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/buttons"
+        android:onClick="creerCompte"
+        android:text="@string/txt_btn_insp"
+        app:backgroundTint="@color/colorPrimary" />
+</LinearLayout>
