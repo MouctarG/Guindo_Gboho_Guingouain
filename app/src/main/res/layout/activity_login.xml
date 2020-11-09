@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:hint="@string/pseudo"
+                android:hint="@string/txt_mdp"
                 android:inputType="textPassword">
 
             </com.google.android.material.textfield.TextInputEditText>

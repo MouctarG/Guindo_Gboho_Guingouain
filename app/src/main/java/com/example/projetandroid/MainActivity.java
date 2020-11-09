@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lesCategories = new ArrayList<>();
-        // getCategories();
+        getCategories();
 
         //updateTest();
 

@@ -33,6 +33,7 @@
     <string name="txt_categotry">Catégories</string>
     <string name="open">ouvrir</string>
     <string name="close">Fermer</string>
+    <string name="txt_mdp">Mot de passe</string>
 
 
 </resources>
