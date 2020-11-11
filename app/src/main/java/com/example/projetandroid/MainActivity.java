@@ -9,7 +9,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projetandroid.model.ViewItems.CategorieAdapter;
 import com.example.projetandroid.utils.beans.ArticleTypes;
 import com.example.projetandroid.utils.beans.CategoriesTypes;
 import com.example.projetandroid.utils.webservice.GetDataWebService;
@@ -36,8 +39,10 @@ import javax.net.ssl.HttpsURLConnection;
 public class MainActivity extends AppCompatActivity {
     private List<CategoriesTypes> lesCategories;
     private List<ArticleTypes> lesArticles;
+    CategorieAdapter categorieAdapter;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    RecyclerView rv_category;
     private ActionBarDrawerToggle barDrawerToggle;
 
     @Override
@@ -50,14 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navSide);
+        rv_category = findViewById(R.id.rv_Category);
         barDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(barDrawerToggle);
         barDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         GetAllCategories d = new GetAllCategories();
         d.execute();
-        //    Log.v("TAG", String.valueOf(lesCategories.size()));
+
+        Log.v("TAb", String.valueOf(lesCategories.size()));
     }
 
 
@@ -198,15 +204,22 @@ public class MainActivity extends AppCompatActivity {
                 lesCategories.addAll(res);
                 lesArticles.clear();
                 lesArticles.addAll(resArticleType);
-                /*
+
                 for (CategoriesTypes c : lesCategories)
                     Log.i("TAG", c.getName() + " : ");
-
-                 */
+                categorieAdapter = new CategorieAdapter((ArrayList<CategoriesTypes>) lesCategories);
+                rv_category.setAdapter(categorieAdapter);
+                rv_category.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
 
             }
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
     }
 }
 
