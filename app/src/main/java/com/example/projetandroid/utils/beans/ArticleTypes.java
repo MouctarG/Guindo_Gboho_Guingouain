@@ -3,7 +3,7 @@ package com.example.projetandroid.utils.beans;
 import java.util.List;
 
 public class ArticleTypes {
-    private Marque brand;
+    private String brand;
     private String id;
     private List<LinksTypes> links;
     private double maximumPrice;
@@ -12,13 +12,6 @@ public class ArticleTypes {
     private String shortDescription;
     private Image image;
 
-    public Marque getBrand() {
-        return brand;
-    }
-
-    public void setBrand(Marque brand) {
-        this.brand = brand;
-    }
 
     public String getId() {
         return id;
@@ -74,5 +67,13 @@ public class ArticleTypes {
 
     public void setImage(Image image) {
         this.image = image;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 }

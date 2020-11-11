@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.projetandroid.utils.beans.ArticleTypes;
 import com.example.projetandroid.utils.beans.CategoriesTypes;
 import com.example.projetandroid.utils.webservice.GetDataWebService;
 import com.google.android.material.navigation.NavigationView;
@@ -34,6 +35,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
     private List<CategoriesTypes> lesCategories;
+    private List<ArticleTypes> lesArticles;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     private ActionBarDrawerToggle barDrawerToggle;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lesCategories = new ArrayList<>();
+        lesArticles = new ArrayList<>();
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -157,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
     public class GetAllCategories extends AsyncTask {
 
         private ArrayList<CategoriesTypes> res = null;
+        private ArrayList<ArticleTypes> resArticleType = null;
         private Exception exception = null;
 
         /**
@@ -168,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 res = GetDataWebService.getAllCategoriesByServer();
+                resArticleType = GetDataWebService.getAllArticlesByServer();
             } catch (Exception e) {
                 exception = e;
             }
@@ -186,16 +191,20 @@ public class MainActivity extends AppCompatActivity {
             if (exception != null) {
                 //Échec
                 exception.printStackTrace();
-                //   tv_info.setText("Une erreur s'est produite : " + exception.getMessage());
-                // tv_info.setTextColor(Color.RED);
+
             } else {
 
                 lesCategories.clear();
                 lesCategories.addAll(res);
+                lesArticles.clear();
+                lesArticles.addAll(resArticleType);
+                /*
                 for (CategoriesTypes c : lesCategories)
                     Log.i("TAG", c.getName() + " : ");
 
-                //  Log.v("RES",)
+                 */
+
+
             }
         }
     }

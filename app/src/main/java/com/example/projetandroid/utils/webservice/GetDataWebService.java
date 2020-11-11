@@ -2,6 +2,8 @@ package com.example.projetandroid.utils.webservice;
 
 import android.util.Log;
 
+import com.example.projetandroid.utils.beans.ArticleTypes;
+import com.example.projetandroid.utils.beans.Articles;
 import com.example.projetandroid.utils.beans.Categories;
 import com.example.projetandroid.utils.beans.CategoriesTypes;
 import com.google.gson.Gson;
@@ -27,5 +29,18 @@ public class GetDataWebService {
         Log.v("Tag", String.valueOf(categories.getCategories().size()));
 
         return (ArrayList<CategoriesTypes>) categories.getCategories();
+    }
+
+
+    public static ArrayList<ArticleTypes> getAllArticlesByServer() throws Exception {
+
+        String jsonResponse = OkHttpUtils.sendGetOkHttpRequest(Api_url_Articles);
+        Log.v("Tag", String.valueOf(jsonResponse.length()));
+        Gson gson = new Gson();
+        Articles articles = gson.fromJson(jsonResponse, Articles.class);
+
+        Log.v("Tag Article", String.valueOf(articles.getProducts().size()));
+
+        return (ArrayList<ArticleTypes>) articles.getProducts();
     }
 }
