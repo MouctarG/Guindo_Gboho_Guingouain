@@ -1,8 +1,8 @@
-package com.example.projetandroid.model;
+package com.example.projetandroid.utils.beans;
 
 import java.util.List;
 
-public class Categorie {
+public class CategoriesTypes {
     private String id;
     private String name;
     private int productCount;

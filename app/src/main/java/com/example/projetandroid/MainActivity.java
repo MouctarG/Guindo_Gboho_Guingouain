@@ -1,5 +1,6 @@
 package com.example.projetandroid;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -9,7 +10,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.projetandroid.model.Categorie;
+import com.example.projetandroid.utils.beans.CategoriesTypes;
+import com.example.projetandroid.utils.webservice.GetDataWebService;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -31,7 +33,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 
 public class MainActivity extends AppCompatActivity {
-    private List<Categorie> lesCategories;
+    private List<CategoriesTypes> lesCategories;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     private ActionBarDrawerToggle barDrawerToggle;
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lesCategories = new ArrayList<>();
-        getCategories();
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -50,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(barDrawerToggle);
         barDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getCategories();
-        String s=getString(R.string.url_Part_2_Article_Detail_Api);
+
+        GetAllCategories d = new GetAllCategories();
+        d.execute();
+        //    Log.v("TAG", String.valueOf(lesCategories.size()));
     }
 
 
@@ -97,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
 
                             JSONObject jsonObject = new JSONObject(builder.toString());
                             JSONArray categories = jsonObject.getJSONArray("categories");
-                            Categorie categorieClass = null;
-                            Type CategorieListType = new TypeToken<List<Categorie>>() {
+                            CategoriesTypes categoriesTypesClass = null;
+                            Type CategorieListType = new TypeToken<List<CategoriesTypes>>() {
                             }.getType();
                             lesCategories = gson.fromJson(jsonObject.get("categories").toString(), CategorieListType);
                             String str = "";
-                            for (Categorie c : lesCategories) {
+                            for (CategoriesTypes c : lesCategories) {
 
                                 str += c.getName() + "\n";
                             }
@@ -148,6 +151,53 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
 
+    }
+
+
+    public class GetAllCategories extends AsyncTask {
+
+        private ArrayList<CategoriesTypes> res = null;
+        private Exception exception = null;
+
+        /**
+         * Appel asynchrone : exécuté sur un thread à part
+         * On ne peut pas toucher aux éléments graphiques mais on peut y faire des traitements longs
+         */
+        @Override
+        protected Object doInBackground(Object[] params) {
+
+            try {
+                res = GetDataWebService.getAllCategoriesByServer();
+            } catch (Exception e) {
+                exception = e;
+            }
+
+            return null;
+        }
+
+        /**
+         * Appelée sur le thread principal, on peut toucher aux éléments graphiques
+         * mais on ne peut pas y faire de traitements longs
+         */
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+
+            if (exception != null) {
+                //Échec
+                exception.printStackTrace();
+                //   tv_info.setText("Une erreur s'est produite : " + exception.getMessage());
+                // tv_info.setTextColor(Color.RED);
+            } else {
+
+                lesCategories.clear();
+                lesCategories.addAll(res);
+                for (CategoriesTypes c : lesCategories)
+                    Log.i("TAG", c.getName() + " : ");
+
+                //  Log.v("RES",)
+            }
+        }
     }
 }
 

@@ -1,8 +1,8 @@
-package com.example.projetandroid.model;
+package com.example.projetandroid.utils.beans;
 
 import java.util.List;
 
-public class Article {
+public class ArticleTypes {
     private Marque brand;
     private String id;
     private List<LinksTypes> links;

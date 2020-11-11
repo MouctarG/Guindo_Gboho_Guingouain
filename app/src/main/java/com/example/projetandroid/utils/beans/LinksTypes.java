@@ -1,4 +1,4 @@
-package com.example.projetandroid.model;
+package com.example.projetandroid.utils.beans;
 
 public class LinksTypes {
     private String href;
