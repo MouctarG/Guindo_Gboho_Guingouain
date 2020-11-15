@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoolShop</string>
+    <string name="txt_btn_login">Sign in</string>
+    <string name="remember_me">Remember me</string>
+    <string name="txtMdPOublier">Forgot password?</string>
+    <string name="lbl_pseudo">Username</string>
+    <string name="lbl_mdp">Password</string>
+    <string name="lbl_mdp_confirm">Confirm password</string>
+    <string name="lbl_date">Birth date</string>
+    <string name="txt_inscription">Sign up</string>
+    <string name="txt_connexion">Sign in</string>
+    <string name="msgChamp_req_ins">All fields require to be filled</string>
+    <string name="cmpt_creer">Acount successfully created</string>
+    <string name="log_mdp_Incorrect">Wrong login or password</string>
+    <string name="txt_new_password">New password</string>
+    <string name="msg_new_password">Password successfully reinitialised</string>
+    <string name="cmpt_introuvable">Unknow account</string>
+
+    <string name="read_error">Unreadable categories</string>
+    <string name="connect_error">Unable to login into Shop.com</string>
+    <string name="txt_Acceuil">Home</string>
+    <string name="txt_Recherche">Search</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_profil">Profile</string>
+    <string name="txt_logout">Log out</string>
+    <string name="txt_categotry">Categories</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="txt_mdp">Password</string>
+    <string name="txt_mdp_diff_ins">The passwords do not match</string>
+    <string name="notre_slogan">Shopping easy as pie.</string>
+    <string name="txt_btn_insp">Register</string>
+    <string name="quantity">Quantity</string>
+    <string name="txt_ajouter_au_panier">Add to cart</string>
+    <string name="txt_btn_commander">Order</string>
+    <string name="prix_product_panier">Price</string>
+    <string name="panier_product_qte">Quantity</string>
+    <string name="txt_optionPanier">Settings</string>
+    <string name="txt_edit_Item">Edit</string>
+    <string name="txt_remove_Item">Delete</string>
+
+
+</resources>
