@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CoolShop</string>
-    <string name="pseudo">Pseudo</string>
+    <string name="pseudo" translatable="false">Pseudo</string>
     <string name="txt_btn_login">Se connecter</string>
     <string name="remember_me">Se souvenir</string>
     <string name="txtMdPOublier">Mot de passe oublier ?</string>
@@ -37,6 +37,16 @@
     <string name="url_Articles_Api"><![CDATA["https://api2.shop.com/AffiliatePublisherNetwork/v2/products?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&perPage=15&onlyMaProducts=false "]]></string>
     <string name="url_Part_1_Article_Detail_Api">https://api2.shop.com/AffiliatePublisherNetwork/v2/products/</string>
     <string name="url_Part_2_Article_Detail_Api"><![CDATA[\?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=CA]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="quantity">Quantité</string>
+    <string name="txt_ajouter_au_panier">Ajouter au panier</string>
+    <string name="txt_btn_commander">Commander</string>
+    <string name="prix_product_panier">Prix</string>
+    <string name="panier_product_qte">Quantité</string>
+    <string name="txt_optionPanier">Options</string>
+    <string name="txt_edit_Item">Modifier</string>
+    <string name="txt_remove_Item">Supprimer</string>
 
 
 </resources>

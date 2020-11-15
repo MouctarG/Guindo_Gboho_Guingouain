@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetandroid.model.User;
-import com.example.projetandroid.utils.DatabaseHandler;
+import com.example.projetandroid.model.utils.DatabaseHandler;
 
 public class PasswordOublierActivity extends AppCompatActivity {
     EditText edit_psd;

@@ -9,13 +9,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetandroid.model.User;
-import com.example.projetandroid.utils.DatabaseHandler;
+import com.example.projetandroid.model.utils.DatabaseHandler;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edit_log_psd;
     private EditText edit_log_mpd;
     DatabaseHandler databaseHandler;
+    public static String LOGIN_USER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         edit_log_psd = findViewById(R.id.edit_log_psd);
         edit_log_mpd = findViewById(R.id.edit_log_mdp);
-        databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, 1);
+        databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
 
     }
 
@@ -43,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 toast.setText(R.string.log_mdp_Incorrect);
                 toast.show();
             } else {
+                LOGIN_USER = str_psd;
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 databaseHandler.close();

@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetandroid.model.User;
-import com.example.projetandroid.utils.DatabaseHandler;
+import com.example.projetandroid.model.utils.DatabaseHandler;
 
 
 public class InscriptionActivity extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class InscriptionActivity extends AppCompatActivity {
         edit_ins_mdp = findViewById(R.id.edit_ins_mdp);
         edit_ins_mdp_confirm = (EditText) findViewById(R.id.edit_ins_mdp_confirm);
         edit_ins_date = findViewById(R.id.edit_ins_date);
-        databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, 1);
+        databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
 
         // Toast toast = Toast.makeText(this, databaseHandler.showDatabase(), duration);
         // toast.show();

@@ -1,4 +1,4 @@
-package com.example.projetandroid.utils.webservice;
+package com.example.projetandroid.model.utils.webservice;
 
 import java.net.HttpURLConnection;
 
