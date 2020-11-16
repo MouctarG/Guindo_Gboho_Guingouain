@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">CoolShop</string>
+    <string name="pseudo" translatable="false">Pseudo</string>
+    <string name="txt_btn_login">Se connecter</string>
+    <string name="remember_me">Se souvenir</string>
+    <string name="txtMdPOublier">Mot de passe oublier ?</string>
+    <string name="lbl_pseudo">Pseudo</string>
+    <string name="lbl_mdp">Mot de passe</string>
+    <string name="lbl_mdp_confirm">Confirmer votre mot de passe</string>
+    <string name="lbl_date">Date de Naissance</string>
+    <string name="txt_btn_insp">Enregistrer</string>
+    <string name="txt_connexion">Se Connecter</string>
+    <string name="txt_inscription">Créer un compte</string>
+    <string name="notre_slogan">Votre shopping en toute simplicité</string>
+    <string name="msgChamp_req_ins">Tous les champs sont requis</string>
+    <string name="txt_mdp_diff_ins">Les deux mots de passes sont différents</string>
+    <string name="cmpt_creer">Compte creér avec succès</string>
+    <string name="log_mdp_Incorrect">Login ou mot de passe incorrect</string>
+    <string name="txt_new_password">Nouveau Mot de passe</string>
+    <string name="msg_new_password">Mot de passe reinitialiser avec succès</string>
+    <string name="cmpt_introuvable">Votre compte est introuvable</string>
+    <string name="api_Key">3c1316b53f06427c887340021d6511e3</string>
+
+    <string name="read_error">Impossible de lire les categories</string>
+    <string name="connect_error">Impossible de se connecter Shop.com</string>
+    <string name="url_Categories_Api"><![CDATA[https://api2.shop.com/AffiliatePublisherNetwork/v2/categories?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&onlyMaProducts=false]]></string>
+    <string name="txt_Acceuil">Acceuil</string>
+    <string name="txt_Recherche">Recherche</string>
+    <string name="txt_AllCategory">Categories</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_profil">Profil</string>
+    <string name="txt_logout">Se deconnecter</string>
+    <string name="txt_categotry">Catégories</string>
+    <string name="open">ouvrir</string>
+    <string name="close">Fermer</string>
+    <string name="txt_mdp">Mot de passe</string>
+    <string name="url_Articles_Api"><![CDATA["https://api2.shop.com/AffiliatePublisherNetwork/v2/products?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&perPage=15&onlyMaProducts=false "]]></string>
+    <string name="url_Part_1_Article_Detail_Api">https://api2.shop.com/AffiliatePublisherNetwork/v2/products/</string>
+    <string name="url_Part_2_Article_Detail_Api"><![CDATA[\?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=CA]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="quantity">Quantité</string>
+    <string name="txt_ajouter_au_panier">Ajouter au panier</string>
+    <string name="txt_btn_commander">Commander</string>
+    <string name="prix_product_panier">Prix</string>
+    <string name="panier_product_qte">Quantité</string>
+    <string name="txt_optionPanier">Options</string>
+    <string name="txt_edit_Item">Modifier</string>
+    <string name="txt_remove_Item">Supprimer</string>
+
+
+</resources>
