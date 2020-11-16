@@ -2,7 +2,6 @@ package com.example.projetandroid;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -99,8 +98,6 @@ public class ProductsActivity extends AppCompatActivity implements ArticleTypeCl
         detailFragment.setArguments(b);
         getSupportFragmentManager().beginTransaction().
                 replace(R.id.prod_list_fragment, detailFragment).commit();
-
-        Toast.makeText(ProductsActivity.this, articleTypes.getName(), Toast.LENGTH_LONG).show();
     }
 
 

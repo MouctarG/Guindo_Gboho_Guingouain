@@ -17,7 +17,6 @@
         app:menu="@menu/main_menu" />
 
     <LinearLayout
-        android:id="@+id/linearLayoutMainActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -31,7 +30,7 @@
                 android:id="@+id/edit_recherche"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:hint="Recherche" />
 
             <Button
@@ -43,11 +42,17 @@
                 android:onClick="rechercherArticle" />
         </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_Category"
+        <FrameLayout
+            android:id="@+id/frame_main_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/categorie_items_layout" />
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_Category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/categorie_items_layout" />
+        </FrameLayout>
     </LinearLayout>
 
 

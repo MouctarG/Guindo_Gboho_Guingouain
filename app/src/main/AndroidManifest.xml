@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAndroid">
-        <activity android:name=".PanierActivity"></activity>
+        <activity android:name=".ConfirmationCommandeActivity"></activity>
+        <activity android:name=".CommandeActivity" />
+        <activity android:name=".SearchArticleActivity" />
+        <activity android:name=".PanierActivity" />
         <activity android:name=".ProductsActivity" />
         <activity android:name=".PasswordOublierActivity" />
         <activity android:name=".LoginActivity" />

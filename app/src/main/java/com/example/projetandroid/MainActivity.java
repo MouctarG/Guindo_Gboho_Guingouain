@@ -1,27 +1,29 @@
 package com.example.projetandroid;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projetandroid.Interface.ArticleTypeClickListener;
 import com.example.projetandroid.Interface.CategoryClickListener;
 import com.example.projetandroid.model.utils.beans.ArticleTypes;
 import com.example.projetandroid.model.utils.beans.CategoriesTypes;
 import com.example.projetandroid.model.utils.webservice.GetDataWebService;
-import com.example.projetandroid.view.ArticleAdapter;
 import com.example.projetandroid.view.CategorieAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
@@ -43,7 +45,7 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
 
-public class MainActivity extends AppCompatActivity implements CategoryClickListener, ArticleTypeClickListener {
+public class MainActivity extends AppCompatActivity implements CategoryClickListener, NavigationView.OnNavigationItemSelectedListener {
     private List<CategoriesTypes> lesCategories;
     private List<ArticleTypes> lesArticles;
     CategorieAdapter categorieAdapter;
@@ -51,19 +53,20 @@ public class MainActivity extends AppCompatActivity implements CategoryClickList
     NavigationView navigationView;
     RecyclerView rv_category;
     EditText edit_recherche;
-    ListArticleFragment articlesFragment;
+
     private ActionBarDrawerToggle barDrawerToggle;
     public static final String CLE_CATEGORY_CHOICE = "CLE_CATEGORY_CHOICE";
-    private ArticleAdapter articleAdapter;
-    List<ArticleTypes> articleTypesList;
+    public static final String MOTIF_SEARCH = "MOTIF_SEARCH";
 
+
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lesCategories = new ArrayList<>();
         lesArticles = new ArrayList<>();
-        articleTypesList = new ArrayList<>();
+        //    articleTypesList = new ArrayList<>();
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -79,11 +82,8 @@ public class MainActivity extends AppCompatActivity implements CategoryClickList
         categorieAdapter = new CategorieAdapter(this);
         rv_category.setAdapter(categorieAdapter);
         rv_category.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
+        navigationView.setNavigationItemSelectedListener(this);
 
-
-        articlesFragment = new ListArticleFragment();
-        articleAdapter = new ArticleAdapter(this);
-        articlesFragment = new ListArticleFragment(articleAdapter, this);
 
         Log.v("TAb", String.valueOf(lesCategories.size()));
     }
@@ -175,22 +175,23 @@ public class MainActivity extends AppCompatActivity implements CategoryClickList
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (barDrawerToggle.onOptionsItemSelected(item))
-            return true;
-
-        return super.onOptionsItemSelected(item);
-
-    }
-
     public void rechercherArticle(View view) {
-        new GetArticleBysearch().execute();
+        Intent intent = new Intent(MainActivity.this, SearchArticleActivity.class);
+        intent.putExtra(MOTIF_SEARCH, edit_recherche.getText().toString());
+        setResult(Activity.RESULT_OK, intent);
+        startActivity(intent);
     }
 
     @Override
-    public void onClick(ArticleTypes articleTypes) {
-
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.mes_commandes) {
+            Toast.makeText(MainActivity.this, "OUI", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, CommandeActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return true;
     }
 
 
@@ -260,48 +261,20 @@ public class MainActivity extends AppCompatActivity implements CategoryClickList
         startActivity(intent);
     }
 
-    public class GetArticleBysearch extends AsyncTask<URL, Void, JSONObject> {
-        private ArrayList<ArticleTypes> resArticleType = new ArrayList<>();
-        private Exception exception = null;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (barDrawerToggle.onOptionsItemSelected(item))
+            return true;
+        return super.onOptionsItemSelected(item);
 
-
-        @Override
-        protected JSONObject doInBackground(URL... urls) {
-
-            HttpURLConnection connection = null;
-
-            try {
-                String motif = edit_recherche.getText().toString();
-
-                resArticleType = GetDataWebService.getAllArticlesBySearch(motif);
-
-            } catch (Exception e) {
-
-            }
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(JSONObject jsonObject) {
-            super.onPostExecute(jsonObject);
-
-            if (!resArticleType.isEmpty()) {
-
-                articleTypesList.clear();
-                articleTypesList.addAll(resArticleType);
-                articlesFragment.getArticleAdapter().setArticleTypes(articleTypesList);
-
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.linearLayoutMainActivity, articlesFragment).commit();
-            } else {
-                Toast.makeText(MainActivity.this, "Aucun article trouvée", Toast.LENGTH_LONG).show();
-            }
-
-        }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
 }
 

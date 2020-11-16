@@ -29,9 +29,7 @@ public class InscriptionActivity extends AppCompatActivity {
         edit_ins_mdp_confirm = (EditText) findViewById(R.id.edit_ins_mdp_confirm);
         edit_ins_date = findViewById(R.id.edit_ins_date);
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
-
-        // Toast toast = Toast.makeText(this, databaseHandler.showDatabase(), duration);
-        // toast.show();
+        ;
     }
 
     public void creerCompte(View view) {
@@ -51,16 +49,23 @@ public class InscriptionActivity extends AppCompatActivity {
             toast.show();
 
         } else {
-            User user = new User(str_psd, str_mdp);
-            databaseHandler.addUser(user);
 
-            toast.setText(str_psd);
-            toast.setText(getText(R.string.cmpt_creer));
-            toast.show();
-            Intent intent = new Intent(InscriptionActivity.this, MainActivity.class);
-            startActivity(intent);
-            databaseHandler.close();
-            finish();
+            if (databaseHandler.checkUser(str_psd) == null) {
+                User user = new User(str_psd, str_mdp);
+                databaseHandler.addUser(user);
+
+                toast.setText(str_psd);
+                toast.setText(getText(R.string.cmpt_creer));
+                toast.show();
+                Intent intent = new Intent(InscriptionActivity.this, LoginActivity.class);
+                startActivity(intent);
+                databaseHandler.close();
+                finish();
+            } else {
+                toast.setText(getString(R.string.msg_log_existe));
+                toast.show();
+            }
         }
+
     }
 }
