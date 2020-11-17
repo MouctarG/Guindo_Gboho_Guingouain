@@ -47,6 +47,15 @@
     <string name="txt_optionPanier">Options</string>
     <string name="txt_edit_Item">Modifier</string>
     <string name="txt_remove_Item">Supprimer</string>
+    <string name="msg_aucun_article">Aucun article trouvé</string>
+    <string name="msg_log_existe">Ce login existe déjà</string>
+    <string name="txt_mes_commande">Mes commandes</string>
+    <string name="txt_btn_confirm">Commander</string>
+    <string name="lbl_prenom">Prénom</string>
+    <string name="lbl_nom">Prénom</string>
+    <string name="txt_confirm">Commande</string>
+    <string name="lbl_adresse">Adresse</string>
+    <string name="lbl_phone">Telephone</string>
 
 
 </resources>

@@ -2,10 +2,12 @@ package com.example.projetandroid;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,6 +28,7 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
     ArticleDetailFragment detailFragment;
     Button btn_commander;
     DatabaseHandler databaseHandler;
+    TextView val_prix_total_commande;
 
 
     @Override
@@ -34,22 +37,27 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
         setContentView(R.layout.activity_panier);
         panierProductList = new ArrayList<>();
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
-        String id = getIntent().getExtras().getString("id");
-        double prix = Double.parseDouble(getIntent().getExtras().getString("prix"));
-        int qte = Integer.parseInt(getIntent().getExtras().getString("qte"));
-        String name = getIntent().getExtras().getString("name");
-        double montant = prix * qte;
-        String img_url = getIntent().getExtras().getString("image_url");
-        String description = getIntent().getExtras().getString("description");
+
+        if (getIntent().getExtras() != null) {
+            String id = getIntent().getExtras().getString("id");
+            double prix = Double.parseDouble(getIntent().getExtras().getString("prix"));
+            int qte = Integer.parseInt(getIntent().getExtras().getString("qte"));
+            String name = getIntent().getExtras().getString("name");
+            double montant = prix * qte;
+            String img_url = getIntent().getExtras().getString("image_url");
+            String description = getIntent().getExtras().getString("description");
 
 
-        ItemPanierProduct panierProduct = new ItemPanierProduct(name, id, montant, qte, img_url, description);
-        if (!databaseHandler.checkArticle(panierProduct.getName())) {
-            databaseHandler.addInPanier(panierProduct, LoginActivity.LOGIN_USER);
-        } else databaseHandler.updateItemPanier(panierProduct);
+            ItemPanierProduct panierProduct = new ItemPanierProduct(name, id, montant, qte, img_url, description);
+            if (!databaseHandler.checkArticle(panierProduct.getName())) {
+                databaseHandler.addInPanier(panierProduct, LoginActivity.LOGIN_USER);
+            } else databaseHandler.updateItemPanier(panierProduct);
 
-
+        }
+        val_prix_total_commande = findViewById(R.id.val_prix_total_commande);
         panierProductList = databaseHandler.getItemsPanier(LoginActivity.LOGIN_USER);
+        double mTotal = calculMontantTotal(panierProductList);
+        val_prix_total_commande.setText(String.valueOf(mTotal));
         Log.v("TAG DATABASE", String.valueOf(databaseHandler.getItemsPanier(LoginActivity.LOGIN_USER).size()));
         //panierProductList.add(panierProduct);
         itemsAdapter = new PanierItemsAdapter(this);
@@ -90,14 +98,31 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
                     getSupportFragmentManager().beginTransaction().
                             replace(R.id.lienearLayoutIdPanier, detailFragment).commit();
                 } else if (which == 1) {
+
                     databaseHandler.deleteItemPanier(itemPanierProduct.getName());
                     panierProductList.remove(itemPanierProduct);
                     itemsAdapter.notifyDataSetChanged();
+                    double mTotal = calculMontantTotal(panierProductList);
+                    val_prix_total_commande.setText(String.valueOf(mTotal));
                 }
             }
         });
         builder.show();
 
 
+    }
+
+    private double calculMontantTotal(List<ItemPanierProduct> list) {
+        double res = 0;
+
+        for (ItemPanierProduct product : list)
+            res += product.getMontant();
+
+        return res;
+    }
+
+    public void goToConfirmation(View view) {
+        Intent intent = new Intent(PanierActivity.this, ConfirmationCommandeActivity.class);
+        startActivity(intent);
     }
 }
