@@ -50,6 +50,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String COLUMN_ADRESSE = "adresse";
     public static final String COLUMN_TELEPHONE = "telephone";
     public static final String COLUMN_DATE_COMMANDE = "date_commande";
+    public static final String COLUMN_MONTANT_COMMANDE = "montant";
+    public static final String COLUMN_NAME_ARTICLE_COMMANDE = "name_articles";
+
+    public static final String TABLE_COMMANDE_DROP = "DROP TABLE IF EXISTS " + TABLE_COMMANDE + ";";
 
 
     public static final String DATABASE_NAME = "users.db";
@@ -76,6 +80,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     ");";
 
 
+    String requeteCreateTableCommande =
+            "CREATE TABLE " + TABLE_COMMANDE + " ( " +
+                    COLUMN_ID_COMMANDE + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
+                    COLUMN_NAME_ARTICLE_COMMANDE + " TEXT NOT NULL , " +
+                    COLUMN_LOGIN_USER + " TEXT NOT NULL , " +
+                    COLUMN_PRENOM + " TEXT NOT NULL , " +
+                    COLUMN_NOM + " TEXT NOT NULL , " +
+                    COLUMN_ADRESSE + " TEXT NOT NULL , " +
+                    COLUMN_TELEPHONE + " TEXT  , " +
+                    COLUMN_DATE_COMMANDE + " TEXT NOT NULL ," +
+                    COLUMN_MONTANT_COMMANDE + " TEXT NOT NULL " +
+                    ");";
+
+
     public DatabaseHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -94,12 +112,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.execSQL(requeteCreateTableUser);
         db.execSQL(requeteCreateTablePanier);
+        db.execSQL(requeteCreateTableCommande);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(TABLE_USER_DROP);
         db.execSQL(TABLE_PANIER_DROP);
+        db.execSQL(TABLE_COMMANDE_DROP);
         onCreate(db);
     }
 
@@ -135,9 +155,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public void updatePassword(String login, String newPassword) {
         SQLiteDatabase db = getWritableDatabase();
-        String query = "UPDATE " + TABLE_USER + "SET " + COLUMN_PASSWORD + "=\"" + newPassword
-                + "=\"" + "WHERE " + COLUMN_LOGIN + "=\"" + login +
-                "\"";
+        String query = "UPDATE " + TABLE_USER + " SET " + COLUMN_PASSWORD + "=\"" + newPassword
+                + "\"" + " WHERE " + COLUMN_LOGIN + "=\"" + login +
+                "\" ";
         db.execSQL(query);
 
     }
@@ -226,5 +246,60 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return cursor.getCount() > 0;
     }
 
+    public void deletePanier(String login_user) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_PANIER + " WHERE " + COLUMN_LOGIN_USER + "=\"" + login_user + "\"");
+    }
+
+    public void addCommande(String nomArticle, String prenom, String nom, String adresse,
+                            String phone, String date,
+                            String montant, String loginUser) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_LOGIN_USER, loginUser);
+        contentValues.put(COLUMN_NAME_ARTICLE_COMMANDE, nomArticle);
+        contentValues.put(COLUMN_PRENOM, prenom);
+        contentValues.put(COLUMN_NOM, nom);
+        contentValues.put(COLUMN_ADRESSE, adresse);
+        contentValues.put(COLUMN_TELEPHONE, phone);
+        contentValues.put(COLUMN_DATE_COMMANDE, date);
+        contentValues.put(COLUMN_MONTANT_COMMANDE, montant);
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_COMMANDE, null, contentValues);
+        db.close();
+    }
+
+    public List<Commande> getAllCommande(String loginUser) {
+
+        List<Commande> commandes = new ArrayList<>();
+
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_COMMANDE + " WHERE " + COLUMN_LOGIN_USER + "=\"" + loginUser +
+                "\"";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            do {
+                String nom = cursor.getString(cursor.getColumnIndex(COLUMN_NOM));
+                String prenom = cursor.getString(cursor.getColumnIndex(COLUMN_PRENOM));
+                String telephone = cursor.getString(cursor.getColumnIndex(COLUMN_TELEPHONE));
+                String adresse = cursor.getString(cursor.getColumnIndex(COLUMN_ADRESSE));
+                String date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE_COMMANDE));
+                String montant = cursor.getString(cursor.getColumnIndex(COLUMN_MONTANT_COMMANDE));
+                String nomArticle = cursor.
+                        getString(cursor.getColumnIndex(COLUMN_NAME_ARTICLE_COMMANDE));
+                ;
+                if (telephone.trim().length() == 0)
+                    telephone = "";
+                Commande commande = new Commande(prenom, nom, telephone,
+                        adresse, date, montant, nomArticle);
+                commandes.add(commande);
+
+            } while (cursor.moveToNext());
+
+
+        }
+        if (!cursor.isClosed())
+            cursor.close();
+        return commandes;
+    }
 
 }

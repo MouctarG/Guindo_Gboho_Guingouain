@@ -69,6 +69,11 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="txt_panier_vide">Le panier est vide</string>
     <string name="txt_prix_totale">Prix Totale</string>
+    <string name="txt_cmd_passer">La commande est passé</string>
+    <string name="txt_champ_req">Veuillez renseigner les champs obligatoire</string>
+    <string name="panier_date_cmd">Date</string>
+    <string name="txt_montant">Montant</string>
+    <string name="txt_vos_commande">Vos commandes</string>
 
 
 </resources>

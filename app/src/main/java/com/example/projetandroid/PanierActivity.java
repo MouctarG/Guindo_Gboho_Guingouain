@@ -123,6 +123,8 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
 
     public void goToConfirmation(View view) {
         Intent intent = new Intent(PanierActivity.this, ConfirmationCommandeActivity.class);
+
+        intent.putExtra("valeurTotal", val_prix_total_commande.getText().toString());
         startActivity(intent);
     }
 }

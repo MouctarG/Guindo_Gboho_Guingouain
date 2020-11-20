@@ -4,30 +4,38 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.projetandroid.LoginActivity;
 import com.example.projetandroid.R;
+import com.example.projetandroid.model.utils.Commande;
+import com.example.projetandroid.model.utils.DatabaseHandler;
+import com.example.projetandroid.view.CommandeAdapter;
+
+import java.util.List;
 
 public class SlideshowFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    CommandeAdapter commandeAdapter;
+    RecyclerView rv_commande;
+    DatabaseHandler databaseHandler;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+                             ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        rv_commande = root.findViewById(R.id.rv_commande);
+        databaseHandler = new DatabaseHandler(getContext(), DatabaseHandler.DATABASE_NAME,
+                null, DatabaseHandler.DATABASE_VERSION);
+        List<Commande> commandes = databaseHandler.getAllCommande(LoginActivity.LOGIN_USER);
+        commandeAdapter = new CommandeAdapter(commandes);
+        rv_commande.setAdapter(commandeAdapter);
+        rv_commande.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
         return root;
     }
 }

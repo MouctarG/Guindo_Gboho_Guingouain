@@ -26,6 +26,7 @@ public class PasswordOublierActivity extends AppCompatActivity {
         edit_mdp = findViewById(R.id.edit_passw_mdp);
         edit_mdp_confirm = findViewById(R.id.edit_pass_mdp_confirm);
         edit_date = findViewById(R.id.edit_pass_date);
+        databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
     }
 
     public void updatePassword(View view) {

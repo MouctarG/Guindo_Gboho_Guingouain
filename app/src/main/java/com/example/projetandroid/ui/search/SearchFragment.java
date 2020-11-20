@@ -81,7 +81,7 @@ public class SearchFragment extends Fragment implements ArticleTypeClickListener
 
 
     public class GetArticleBysearch extends AsyncTask<URL, Void, JSONObject> {
-        private ArrayList<ArticleTypes> resArticleType = null;
+        private ArrayList<ArticleTypes> resArticleType = new ArrayList<>();
         private Exception exception = null;
 
 
