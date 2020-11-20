@@ -58,9 +58,7 @@ public class GetDataWebService {
     }
 
     public static ArrayList<ArticleTypes> getAllArticlesBySearch(String motif) throws Exception {
-        String url = "https://api2.shop.com/AffiliatePublisherNetwork/v2/products?" +
-                "publisherId=TEST&locale=fr_CA&site=shop&shipCountry=CA&term=" + motif;
-        url += "&perPage=15&onlyMaProducts=false";
+        String url = "https://api2.shop.com/AffiliatePublisherNetwork/v2/products?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=CA&term=" + motif + "&perPage=15&onlyMaProducts=false";
         String jsonResponse = OkHttpUtils.sendGetOkHttpRequest(url);
         Log.v("Tag", String.valueOf(jsonResponse.length()));
         Gson gson = new Gson();

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navD_home"
+        android:icon="@drawable/baseline_home_black_18dp"
+        android:title="@string/txt_Acceuil" />
 
     <group android:checkableBehavior="single">
         <item
@@ -12,9 +16,9 @@
             android:icon="@drawable/baseline_search_black_18dp"
             android:title="@string/txt_Recherche" />
         <item
-            android:id="@+id/category"
+            android:id="@+id/mes_commandes"
             android:icon="@drawable/baseline_category_black_18dp"
-            android:title="@string/txt_AllCategory" />
+            android:title="@string/txt_mes_commande" />
 
 
     </group>

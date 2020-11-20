@@ -34,8 +34,7 @@ public class PanierItemsAdapter extends RecyclerView.Adapter<PanierItemsAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemPanierProduct product = articles_panier.get(position);
         holder.panier_product_name.setText(product.getName());
-        String strPrix = holder.panier_product_price.getText() + ": "
-                + String.valueOf(product.getMontant());
+        String strPrix = String.valueOf(product.getMontant());
 
         String strQte = String.valueOf(product.getQuantite());
         holder.panier_product_price.setText(strPrix);

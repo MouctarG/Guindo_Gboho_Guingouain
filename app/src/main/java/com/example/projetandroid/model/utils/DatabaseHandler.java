@@ -41,8 +41,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String TABLE_PANIER_DROP = "DROP TABLE IF EXISTS " + TABLE_PANIER + ";";
 
 
+    //TABLE COMMANDE
+
+    public static final String TABLE_COMMANDE = "commande";
+    public static final String COLUMN_ID_COMMANDE = "id_commande";
+    public static final String COLUMN_PRENOM = "prenom";
+    public static final String COLUMN_NOM = "nom";
+    public static final String COLUMN_ADRESSE = "adresse";
+    public static final String COLUMN_TELEPHONE = "telephone";
+    public static final String COLUMN_DATE_COMMANDE = "date_commande";
+
+
     public static final String DATABASE_NAME = "users.db";
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 1;
 
 
     String requeteCreateTablePanier =

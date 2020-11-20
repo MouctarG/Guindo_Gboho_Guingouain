@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prix Totale"
+                android:text="@string/txt_prix_totale"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -48,6 +48,7 @@
                 android:layout_marginTop="30dp"
                 android:text="@string/txt_btn_commander"
                 app:backgroundTint="@color/colorPrimary"
+                android:onClick="goToConfirmation"
 
                 />
         </LinearLayout>
