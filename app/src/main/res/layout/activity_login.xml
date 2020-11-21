@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
     <LinearLayout
         android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:background="@drawable/header"
-        android:orientation="vertical">
 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_header_height"
+        android:background="@drawable/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/labelTitre"
@@ -20,93 +24,109 @@
             android:layout_height="match_parent"
             android:fontFamily="cursive"
             android:gravity="center"
-            android:text="Login"
+            android:text="@string/txt_login"
             android:textColor="@android:color/white"
-            android:textSize="45dp"
+            android:textSize="@dimen/login_header_text_size"
             android:textStyle="bold"
-
             />
 
     </LinearLayout>
 
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/txt_login"
+        android:layout_height="@dimen/login_textfield_height"
+        android:layout_marginStart="@dimen/login_textfield_horizontal_margin"
+        android:layout_marginTop="@dimen/login_header_bottom_spacing"
+        android:layout_marginEnd="@dimen/login_textfield_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/header"
-        android:layout_marginTop="40dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="15dp">
+        app:counterEnabled="true"
+        app:errorEnabled="true">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_log_psd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:counterEnabled="true"
-            app:errorEnabled="true">
+            android:background="@color/white"
+            android:hint="@string/pseudo"
+            android:inputType="text">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_log_psd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:hint="@string/pseudo"
-                android:inputType="text">
+        </com.google.android.material.textfield.TextInputEditText>
 
-            </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_login_psd"
 
+        android:layout_height="@dimen/login_textfield_height"
+        android:layout_marginStart="@dimen/login_textfield_horizontal_margin"
+        android:layout_marginTop="@dimen/login_textfield_spacing"
+        android:layout_marginEnd="@dimen/login_textfield_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_login"
 
-        <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        app:endIconMode="password_toggle"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_log_mdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconMode="password_toggle"
-            app:errorEnabled="true">
+            android:background="@color/white"
+            android:hint="@string/txt_mdp"
+            android:inputType="textPassword">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_log_mdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:hint="@string/txt_mdp"
-                android:inputType="textPassword">
+        </com.google.android.material.textfield.TextInputEditText>
 
-            </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/login_label_height"
+        android:layout_marginStart="@dimen/login_chkbox_horizontal_margin"
+        android:layout_marginTop="@dimen/login_textfield_spacing"
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:text="@string/remember_me"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_login_psd" />
 
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/remember_me"
-                android:textColor="@color/colorPrimary" />
+    <TextView
+        android:id="@+id/txtV_MdP_Oublier"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/login_label_height"
+        android:layout_marginTop="@dimen/login_textfield_spacing"
+        android:layout_marginEnd="@dimen/login_chkbox_horizontal_margin"
+        android:onClick="motDPasseOublier"
+        android:paddingTop="@dimen/login_textview_padding"
 
-            <TextView
-                android:id="@+id/txtV_MdP_Oublier"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
-                android:onClick="motDPasseOublier"
-                android:text="@string/txtMdPOublier"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
+        android:text="@string/txtMdPOublier"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_login_psd" />
 
-        <Button
-            android:id="@+id/btn_Login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/buttons"
-            android:onClick="seConnecter"
-            android:text="@string/txt_btn_login"
-            app:backgroundTint="@color/colorPrimary" />
+    <Button
+        android:id="@+id/btn_Login"
 
-    </LinearLayout>
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_button_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/login_button_horizontal_margin"
+        android:layout_marginTop="@dimen/login_textfield_button_spacing"
+        android:layout_marginEnd="@dimen/login_button_horizontal_margin"
+        app:layout_constraintTop_toBottomOf="@id/txtV_MdP_Oublier"
+        android:background="@drawable/buttons"
 
 
-</RelativeLayout>
+        android:onClick="seConnecter"
+        android:text="@string/txt_btn_login"
+        app:backgroundTint="@color/colorPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

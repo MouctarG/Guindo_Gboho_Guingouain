@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  Dimensions pour inscription_activity -->
     <dimen name="inscription_header_text_size">20sp</dimen>
     <dimen name="inscription_header_height">50dp</dimen>
-    <dimen name="inscription_textfield_height">40dp</dimen>
+    <dimen name="inscription_textfield_height">60dp</dimen>
     <dimen name="inscription_textfield_horizontal_margin">20dp</dimen>
-    <dimen name="inscription_textfield_vertical_spacing">5dp</dimen>
-    <dimen name="inscription_header_bottom_spacing">10dp</dimen>
-    <dimen name="inscription_textfield_button_spacing">10dp</dimen>
+    <dimen name="inscription_textfield_vertical_spacing">10dp</dimen>
+    <dimen name="inscription_header_bottom_spacing">20dp</dimen>
+    <dimen name="inscription_textfield_button_spacing">40dp</dimen>
     <dimen name="inscription_button_horizontal_margin">200dp</dimen>
-    <dimen name="inscription_button_height">40dp</dimen>
+    <dimen name="inscription_button_height">50dp</dimen>
+    <dimen name="inscription_textfield_mid">400dp</dimen>
+    <dimen name="inscription_textfield_mid_right">400dp</dimen>
+
+    <!-- Dimensions pour login_activity -->
+    <dimen name="login_header_height">50dp</dimen>
+    <dimen name="login_header_text_size">20sp</dimen>
+    <dimen name="login_textfield_height">60dp</dimen>
+    <dimen name="login_textfield_horizontal_margin">20dp</dimen>
+    <dimen name="login_header_bottom_spacing">10dp</dimen>
+    <dimen name="login_box_horizontal_margin">40dp</dimen>
+    <dimen name="login_textfield_spacing">10dp</dimen>
+    <dimen name="login_mdp_oublier_margin_left">24dp</dimen>
+    <dimen name="login_button_height">50dp</dimen>
+    <dimen name="login_textfield_button_spacing">10dp</dimen>
+    <dimen name="login_button_horizontal_margin">120dp</dimen>
 </resources>
