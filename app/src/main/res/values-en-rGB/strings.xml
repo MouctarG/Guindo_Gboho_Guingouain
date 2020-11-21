@@ -4,10 +4,12 @@
     <string name="txt_btn_login">Sign in</string>
     <string name="remember_me">Remember me</string>
     <string name="txtMdPOublier">Forgot password?</string>
+    <string name="pseudo">Login</string>
     <string name="lbl_pseudo">Username</string>
     <string name="lbl_mdp">Password</string>
     <string name="lbl_mdp_confirm">Confirm password</string>
     <string name="lbl_date">Birth date</string>
+    <string name="header_inscription">Inscription</string>
     <string name="txt_inscription">Sign up</string>
     <string name="txt_connexion">Sign in</string>
     <string name="msgChamp_req_ins">All fields require to be filled</string>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="inscription_header_text_size">20sp</dimen>
+    <dimen name="inscription_header_height">50dp</dimen>
+    <dimen name="inscription_textfield_height">40dp</dimen>
+    <dimen name="inscription_textfield_horizontal_margin">20dp</dimen>
+    <dimen name="inscription_textfield_vertical_spacing">5dp</dimen>
+    <dimen name="inscription_header_bottom_spacing">10dp</dimen>
+    <dimen name="inscription_textfield_button_spacing">10dp</dimen>
+    <dimen name="inscription_button_horizontal_margin">200dp</dimen>
+    <dimen name="inscription_button_height">40dp</dimen>
+</resources>

@@ -8,6 +8,7 @@
     <string name="lbl_mdp">Mot de passe</string>
     <string name="lbl_mdp_confirm">Confirmer votre mot de passe</string>
     <string name="lbl_date">Date de Naissance</string>
+    <string name="header_inscription">Inscription</string>
     <string name="txt_btn_insp">Enregistrer</string>
     <string name="txt_connexion">Se Connecter</string>
     <string name="txt_inscription">Créer un compte</string>
