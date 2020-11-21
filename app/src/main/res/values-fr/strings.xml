@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CoolShop</string>
-    <string name="pseudo" translatable="false">Pseudo</string>
     <string name="txt_btn_login">Se connecter</string>
     <string name="remember_me">Se souvenir</string>
     <string name="txtMdPOublier">Mot de passe oublier ?</string>
@@ -20,14 +19,11 @@
     <string name="txt_new_password">Nouveau Mot de passe</string>
     <string name="msg_new_password">Mot de passe reinitialiser avec succès</string>
     <string name="cmpt_introuvable">Votre compte est introuvable</string>
-    <string name="api_Key">3c1316b53f06427c887340021d6511e3</string>
 
     <string name="read_error">Impossible de lire les categories</string>
     <string name="connect_error">Impossible de se connecter Shop.com</string>
-    <string name="url_Categories_Api"><![CDATA[https://api2.shop.com/AffiliatePublisherNetwork/v2/categories?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&onlyMaProducts=false]]></string>
     <string name="txt_Acceuil">Acceuil</string>
     <string name="txt_Recherche">Recherche</string>
-    <string name="txt_AllCategory">Categories</string>
     <string name="txt_login">Login</string>
     <string name="txt_profil">Profil</string>
     <string name="txt_logout">Se deconnecter</string>
@@ -35,11 +31,7 @@
     <string name="open">ouvrir</string>
     <string name="close">Fermer</string>
     <string name="txt_mdp">Mot de passe</string>
-    <string name="url_Articles_Api"><![CDATA["https://api2.shop.com/AffiliatePublisherNetwork/v2/products?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&perPage=15&onlyMaProducts=false "]]></string>
-    <string name="url_Part_1_Article_Detail_Api">https://api2.shop.com/AffiliatePublisherNetwork/v2/products/</string>
-    <string name="url_Part_2_Article_Detail_Api"><![CDATA[\?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=CA]]></string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="quantity">Quantité</string>
     <string name="txt_ajouter_au_panier">Ajouter au panier</string>
     <string name="txt_btn_commander">Commander</string>
@@ -69,9 +61,8 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">Diaporama</string>
     <string name="txt_panier_vide">Le panier est vide</string>
-    <string name="txt_prix_totale">Prix Totale</string>
 
 
     <string name="txt_cmd_passer">La commande est passé</string>
@@ -79,4 +70,11 @@
     <string name="panier_date_cmd">Date</string>
     <string name="txt_montant">Montant</string>
     <string name="txt_vos_commande">Vos commandes</string>
+    <string name="action_settings">S</string>
+    <string name="menu_home">H</string>
+    <string name="menu_gallery">G</string>
+    <string name="txt_panier_vide">L</string>
+    <string name="txt_prix_totale">Prix totale</string>
+    <string name="txt_prix_totale">P</string>
+    <string name="menu_slideshow">D</string>
 </resources>

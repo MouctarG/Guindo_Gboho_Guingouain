@@ -44,33 +44,48 @@
 
 
 
-    <string name="msg_aucun_article">Aucun article trouvé</string>
-    <string name="msg_log_existe">Ce login existe déjà</string>
-    <string name="txt_mes_commande">Mes commandes</string>
-    <string name="txt_btn_confirm">Commander</string>
-    <string name="lbl_prenom">Prénom</string>
-    <string name="lbl_nom">Nom</string>
-    <string name="txt_confirm">Commande</string>
-    <string name="lbl_adresse">Adresse</string>
-    <string name="lbl_phone">Telephone</string>
+    <string name="msg_aucun_article">No article found</string>
+    <string name="msg_log_existe">This login already exist</string>
+    <string name="txt_mes_commande">My orders</string>
+    <string name="txt_btn_confirm">Order</string>
+    <string name="lbl_prenom">First name</string>
+    <string name="lbl_nom">Last name</string>
+    <string name="txt_confirm">Order</string>
+    <string name="lbl_adresse">Adress</string>
+    <string name="lbl_phone">Phone number</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Options</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="txt_panier_vide">Le panier est vide</string>
-    <string name="txt_prix_totale">Prix Totale</string>
+    <string name="menu_home">Accueil</string>
+    <string name="menu_gallery">Gallerie</string>
+    <string name="menu_slideshow">Diaporama</string>
+    <string name="txt_panier_vide">The cart is empty</string>
+    <string name="txt_prix_totale">Total cost</string>
     <string name="txt_cmd_passer">La commande est passé</string>
     <string name="txt_champ_req">Veuillez renseigner les champs obligatoire</string>
     <string name="panier_date_cmd">Date</string>
     <string name="txt_montant">Montant</string>
     <string name="txt_vos_commande">Vos commandes</string>
+    <string name="msg_aucun_article">N</string>
+    <string name="msg_log_existe">T</string>
+    <string name="txt_mes_commande">M</string>
+    <string name="txt_btn_confirm">O</string>
+    <string name="lbl_prenom">F</string>
+    <string name="lbl_nom">L</string>
+    <string name="txt_confirm">O</string>
+    <string name="lbl_adresse">A</string>
+    <string name="lbl_phone">P</string>
+    <string name="action_settings">O</string>
+    <string name="menu_home">A</string>
+    <string name="menu_gallery">G</string>
+    <string name="txt_panier_vide">T</string>
+    <string name="txt_prix_totale">T</string>
+    <string name="menu_slideshow">D</string>
 
 
 </resources>
