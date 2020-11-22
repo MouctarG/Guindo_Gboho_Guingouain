@@ -33,13 +33,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_ins_pseudo"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/inscription_textfield_height"
-        android:layout_marginTop="@dimen/inscription_header_bottom_spacing"
         android:layout_marginStart="@dimen/inscription_textfield_horizontal_margin"
-        android:layout_marginEnd="@dimen/inscription_textfield_mid"
+        android:layout_marginTop="@dimen/inscription_header_bottom_spacing"
+
         android:hint="@string/lbl_pseudo"
-        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
@@ -52,15 +52,16 @@
             android:layout_marginBottom="0dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_insDate"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/inscription_textfield_height"
         android:layout_marginStart="@dimen/inscription_textfield_horizontal_margin"
         android:layout_marginTop="@dimen/inscription_textfield_vertical_spacing"
-        android:layout_marginEnd="@dimen/inscription_textfield_mid"
+
         android:hint="@string/lbl_date"
-        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_ins_pseudo">
 
@@ -77,14 +78,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_insMdp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/inscription_textfield_height"
-        android:layout_marginStart="@dimen/inscription_textfield_mid_right"
         android:layout_marginTop="@dimen/inscription_header_bottom_spacing"
         android:layout_marginEnd="@dimen/inscription_textfield_horizontal_margin"
         android:hint="@string/lbl_mdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -100,14 +100,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_Confirm_insMdp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/inscription_textfield_height"
-        android:layout_marginStart="@dimen/inscription_textfield_mid_right"
         android:layout_marginTop="@dimen/inscription_textfield_vertical_spacing"
         android:layout_marginEnd="@dimen/inscription_textfield_horizontal_margin"
         android:hint="@string/lbl_mdp_confirm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_insMdp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -128,8 +127,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="@dimen/inscription_button_horizontal_margin"
         android:layout_marginTop="@dimen/inscription_textfield_button_spacing"
-        android:layout_marginBottom="0dp"
         android:layout_marginEnd="@dimen/inscription_button_horizontal_margin"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/buttons"
         android:onClick="creerCompte"
         android:text="@string/txt_btn_insp"
@@ -137,5 +136,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_Confirm_insMdp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

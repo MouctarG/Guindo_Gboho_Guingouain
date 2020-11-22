@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CoolShop</string>
+
     <string name="txt_btn_login">Sign in</string>
     <string name="remember_me">Remember me</string>
     <string name="txtMdPOublier">Forgot password?</string>
@@ -42,8 +42,6 @@
     <string name="txt_edit_Item">Edit</string>
     <string name="txt_remove_Item">Delete</string>
 
-
-
     <string name="msg_aucun_article">No article found</string>
     <string name="msg_log_existe">This login already exist</string>
     <string name="txt_mes_commande">My orders</string>
@@ -51,26 +49,26 @@
     <string name="lbl_prenom">First name</string>
     <string name="lbl_nom">Last name</string>
     <string name="txt_confirm">Order</string>
-    <string name="lbl_adresse">Adress</string>
+    <string name="lbl_adresse">Address</string>
     <string name="lbl_phone">Phone number</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slide show</string>
+    <string name="txt_panier_vide">The cart is empty</string>
+    <string name="txt_prix_totale">Total Price</string>
+    <string name="txt_cmd_passer">Purchase order placed</string>
+    <string name="txt_champ_req">Fill in all the required fields</string>
+    <string name="panier_date_cmd">Date</string>
+    <string name="txt_montant">Price</string>
+    <string name="txt_vos_commande">Purchase orders</string>
+
+    <!--  TODO: A supprimer Inutilisé dans le projet ???? -->
     <string name="action_settings">Options</string>
 
-    <string name="menu_home">Accueil</string>
-    <string name="menu_gallery">Gallerie</string>
-    <string name="menu_slideshow">Diaporama</string>
-    <string name="txt_panier_vide">The cart is empty</string>
-    <string name="txt_prix_totale">Total cost</string>
-    <string name="txt_cmd_passer">La commande est passé</string>
-    <string name="txt_champ_req">Veuillez renseigner les champs obligatoire</string>
-    <string name="panier_date_cmd">Date</string>
-    <string name="txt_montant">Montant</string>
-    <string name="txt_vos_commande">Vos commandes</string>
+
+
+    <!-- Doubons:
     <string name="msg_aucun_article">N</string>
     <string name="msg_log_existe">T</string>
     <string name="txt_mes_commande">M</string>
@@ -86,6 +84,7 @@
     <string name="txt_panier_vide">T</string>
     <string name="txt_prix_totale">T</string>
     <string name="menu_slideshow">D</string>
+    -->
 
 
 </resources>
