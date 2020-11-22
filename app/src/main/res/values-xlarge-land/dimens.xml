@@ -9,4 +9,16 @@
     <dimen name="inscription_textfield_button_spacing">50dp</dimen>
     <dimen name="inscription_button_horizontal_margin">200dp</dimen>
     <dimen name="inscription_button_height">70dp</dimen>
+
+    <!-- Dimensions pour main_activity -->
+    <dimen name="main_logo_height">100dp</dimen>
+    <dimen name="main_logo_top">25dp</dimen>
+    <dimen name="main_slogan_text_size">40sp</dimen>
+    <dimen name="main_slogan_height">70dp</dimen>
+    <dimen name="main_logo_slogan_space">120dp</dimen>
+    <dimen name="main_button_height">70dp</dimen>
+    <dimen name="main_button_horizontal_margin">200dp</dimen>
+    <dimen name="main_buttons_space">10dp</dimen>
+    <dimen name="main_button_connect_bottom">30dp</dimen>
+    <dimen name="main_button_text_size">15sp</dimen>
 </resources>

@@ -63,6 +63,8 @@
     <string name="txt_montant">Price</string>
     <string name="txt_vos_commande">Purchase orders</string>
 
+    <string name="main_logo_description">our logo</string>
+
     <!--  TODO: A supprimer Inutilisé dans le projet ???? -->
     <string name="action_settings">Options</string>
 

@@ -65,6 +65,8 @@
     <string name="panier_date_cmd">Date</string>
     <string name="txt_montant">Montant</string>
     <string name="txt_vos_commande">Vos commandes</string>
+
+    <string name="main_logo_description">notre logo</string>
     <!-- FIN: Expressions traduites en d'autres langues: -->
 
     <string name="api_Key" translatable="false">3c1316b53f06427c887340021d6511e3</string>

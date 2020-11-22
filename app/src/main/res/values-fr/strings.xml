@@ -64,6 +64,8 @@
     <string name="txt_montant">Montant</string>
     <string name="txt_vos_commande">Vos commandes</string>
 
+    <string name="main_logo_description">notre logo</string>
+
     <!--  TODO: A supprimer Inutilisé dans le projet ???? -->
     <string name="action_settings">Settings</string>
 
