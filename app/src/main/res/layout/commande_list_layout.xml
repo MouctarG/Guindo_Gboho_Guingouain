@@ -17,9 +17,9 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
-            android:text="Article name"
+            android:text="@string/un_nom_d_article"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -35,10 +35,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="3dp"
-            android:text="date"
+            android:text="@string/une_date"
             android:textAlignment="viewEnd"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
 

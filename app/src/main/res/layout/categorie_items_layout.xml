@@ -17,10 +17,10 @@
             android:id="@+id/category_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Categoriy name"
+            android:text="@string/un_nom_de_category"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -29,8 +29,10 @@
             android:layout_height="200dp"
             android:layout_below="@id/category_name"
             android:layout_marginTop="2dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/catergory_image_description" />
 
+        <!-- TODO: a enlever -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

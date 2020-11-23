@@ -17,10 +17,10 @@
             android:id="@+id/article_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Article name"
+            android:text="@string/un_nom_d_article"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -36,9 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/article_image"
-            android:text="Prix de l'article"
+            android:text="@string/un_prix_d_article"
             android:textAlignment="center"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

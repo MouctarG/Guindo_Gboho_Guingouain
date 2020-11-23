@@ -56,7 +56,7 @@
     <string name="menu_gallery">Gallerie</string>
     <string name="menu_slideshow">Diaporama</string>
     <string name="txt_panier_vide">Le panier est vide</string>
-    <string name="txt_prix_totale">Prix Totale</string>
+    <string name="txt_prix_totale">Prix Total</string>
 
     <string name="txt_cmd_passer">La commande est passé</string>
     <string name="txt_champ_req">Veuillez renseigner les champs obligatoire</string>
@@ -66,6 +66,14 @@
 
     <string name="main_logo_description">notre logo</string>
 
+    <string name="fragment_article_product_detail">Détail de l\'article</string>
+    <string name="fragment_article_price">Prix</string>
+
+    <string name="article_image_description">image de l\'article</string>
+
+    <string name="hint_recherche">recherche</string>
+
+    <string name="txt_AllCategory">Categories</string>
     <!--  TODO: A supprimer Inutilisé dans le projet ???? -->
     <string name="action_settings">Settings</string>
 

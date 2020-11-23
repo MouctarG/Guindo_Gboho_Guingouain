@@ -2,72 +2,81 @@
     <string name="app_name" translatable="false">CoolShop</string>
 
     <!-- DEB: Expressions traduites en d'autres langues: -->
-    <string name="pseudo">Pseudo</string>
-    <string name="txt_btn_login">Se connecter</string>
-    <string name="remember_me">Se souvenir</string>
-    <string name="txtMdPOublier">Mot de passe oublier ?</string>
-    <string name="lbl_pseudo">Pseudo</string>
-    <string name="lbl_mdp">Mot de passe</string>
-    <string name="lbl_mdp_confirm">Confirmer votre mot de passe</string>
-    <string name="lbl_date">Date de Naissance</string>
+    <string name="txt_btn_login">Sign in</string>
+    <string name="remember_me">Remember me</string>
+    <string name="txtMdPOublier">Forgot password?</string>
+    <string name="pseudo">Login</string>
+    <string name="lbl_pseudo">Username</string>
+    <string name="lbl_mdp">Password</string>
+    <string name="lbl_mdp_confirm">Confirm password</string>
+    <string name="lbl_date">Birth date</string>
     <string name="header_inscription">Inscription</string>
-    <string name="txt_btn_insp">Enregistrer</string>
-    <string name="txt_connexion">Se Connecter</string>
-    <string name="txt_inscription">Créer un compte</string>
-    <string name="notre_slogan">Votre shopping en toute simplicité</string>
-    <string name="msgChamp_req_ins">Tous les champs sont requis</string>
-    <string name="txt_mdp_diff_ins">Les deux mots de passes sont différents</string>
-    <string name="cmpt_creer">Compte creér avec succès</string>
-    <string name="log_mdp_Incorrect">Login ou mot de passe incorrect</string>
-    <string name="txt_new_password">Nouveau Mot de passe</string>
-    <string name="msg_new_password">Mot de passe reinitialiser avec succès</string>
-    <string name="cmpt_introuvable">Votre compte est introuvable</string>
+    <string name="txt_inscription">Sign up</string>
+    <string name="txt_connexion">Sign in</string>
+    <string name="msgChamp_req_ins">All fields require to be filled</string>
+    <string name="cmpt_creer">Acount successfully created</string>
+    <string name="log_mdp_Incorrect">Wrong login or password</string>
+    <string name="txt_new_password">New password</string>
+    <string name="msg_new_password">Password successfully reinitialised</string>
+    <string name="cmpt_introuvable">Unknow account</string>
 
-    <string name="read_error">Impossible de lire les categories</string>
-    <string name="connect_error">Impossible de se connecter Shop.com</string>
-
-    <string name="txt_Acceuil">Acceuil</string>
-    <string name="txt_Recherche">Recherche</string>
-    <string name="txt_AllCategory" translatable="false">Categories</string>
+    <string name="read_error">Unreadable categories</string>
+    <string name="connect_error">Unable to login into Shop.com</string>
+    <string name="txt_Acceuil">Home</string>
+    <string name="txt_Recherche">Search</string>
     <string name="txt_login">Login</string>
-    <string name="txt_profil">Profil</string>
-    <string name="txt_logout">Se deconnecter</string>
-    <string name="txt_categotry">Catégories</string>
-    <string name="open">ouvrir</string>
-    <string name="close">Fermer</string>
-    <string name="txt_mdp">Mot de passe</string>
+    <string name="txt_profil">Profile</string>
+    <string name="txt_logout">Log out</string>
+    <string name="txt_categotry">Categories</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="txt_mdp">Password</string>
+    <string name="txt_mdp_diff_ins">The passwords do not match</string>
+    <string name="notre_slogan">Shopping easy as pie.</string>
+    <string name="txt_btn_insp">Register</string>
+    <string name="quantity">Quantity</string>
+    <string name="txt_ajouter_au_panier">Add to cart</string>
+    <string name="txt_btn_commander">Order</string>
+    <string name="prix_product_panier">Price</string>
+    <string name="panier_product_qte">Quantity</string>
+    <string name="txt_optionPanier">Settings</string>
+    <string name="txt_edit_Item">Edit</string>
+    <string name="txt_remove_Item">Delete</string>
 
-    <string name="quantity">Quantité</string>
-    <string name="txt_ajouter_au_panier">Ajouter au panier</string>
-    <string name="txt_btn_commander">Commander</string>
-    <string name="prix_product_panier">Prix</string>
-    <string name="panier_product_qte">Quantité</string>
-    <string name="txt_optionPanier">Options</string>
-    <string name="txt_edit_Item">Modifier</string>
-    <string name="txt_remove_Item">Supprimer</string>
-    <string name="msg_aucun_article">Aucun article trouvé</string>
-    <string name="msg_log_existe">Ce login existe déjà</string>
-    <string name="txt_mes_commande">Mes commandes</string>
-    <string name="txt_btn_confirm">Commander</string>
-    <string name="lbl_prenom">Prénom</string>
-    <string name="lbl_nom">Nom</string>
-    <string name="txt_confirm">Commande</string>
-    <string name="lbl_adresse">Adresse</string>
-    <string name="lbl_phone">Telephone</string>
+    <string name="msg_aucun_article">No article found</string>
+    <string name="msg_log_existe">This login already exist</string>
+    <string name="txt_mes_commande">My orders</string>
+    <string name="txt_btn_confirm">Order</string>
+    <string name="lbl_prenom">First name</string>
+    <string name="lbl_nom">Last name</string>
+    <string name="txt_confirm">Order</string>
+    <string name="lbl_adresse">Address</string>
+    <string name="lbl_phone">Phone number</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="txt_panier_vide">Le panier est vide</string>
-    <string name="txt_prix_totale">Prix Totale</string>
-    <string name="txt_cmd_passer">La commande est passé</string>
-    <string name="txt_champ_req">Veuillez renseigner les champs obligatoire</string>
+    <string name="menu_slideshow">Slide show</string>
+    <string name="txt_panier_vide">The cart is empty</string>
+    <string name="txt_prix_totale">Total Price</string>
+    <string name="txt_cmd_passer">Purchase order placed</string>
+    <string name="txt_champ_req">Fill in all the required fields</string>
     <string name="panier_date_cmd">Date</string>
-    <string name="txt_montant">Montant</string>
-    <string name="txt_vos_commande">Vos commandes</string>
+    <string name="txt_montant">Price</string>
+    <string name="txt_vos_commande">Purchase orders</string>
 
-    <string name="main_logo_description">notre logo</string>
+    <string name="main_logo_description">our logo</string>
+
+    <string name="fragment_article_product_detail">Product detail</string>
+    <string name="fragment_article_price">Price</string>
+
+    <string name="article_image_description">product picture</string>
+
+    <string name="hint_recherche">search</string>
+
+    <string name="txt_AllCategory">Categories</string>
     <!-- FIN: Expressions traduites en d'autres langues: -->
+
+    <string name="fragment_article_textview_text" translatable="false">TextView</string>
 
     <string name="api_Key" translatable="false">3c1316b53f06427c887340021d6511e3</string>
     <string name="url_Categories_Api" translatable="false"><![CDATA[https://api2.shop.com/AffiliatePublisherNetwork/v2/categories?publisherId=TEST&locale=fr_CA&site=shop&shipCountry=US&onlyMaProducts=false]]></string>
@@ -87,6 +96,12 @@
     <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string name="un_nom_d_article" translatable="false">Article name</string>
+    <string name="un_prix_d_article" translatable="false">Prix de l\'article</string>
+    <string name="catergory_image_description" translatable="false">Category image</string>
+    <string name="un_nom_de_category" translatable="false">Category name</string>
+    <string name="une_date" translatable="false">date</string>
+    <string name="nb" translatable="false">nb</string>
 
 
 </resources>

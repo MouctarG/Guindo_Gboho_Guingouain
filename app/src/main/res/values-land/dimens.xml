@@ -52,7 +52,7 @@
     <dimen name="main_slogan_text_size">22sp</dimen>
     <dimen name="main_slogan_height">35dp</dimen>
     <dimen name="main_logo_slogan_space">20dp</dimen>
-    <dimen name="main_button_height">40dp</dimen>
+    <dimen name="main_button_height">45dp</dimen>
     <dimen name="main_button_horizontal_margin">100dp</dimen>
     <dimen name="main_buttons_space">10dp</dimen>
     <dimen name="main_button_connect_bottom">20dp</dimen>
