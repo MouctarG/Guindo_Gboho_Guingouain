@@ -121,7 +121,10 @@
         android:layout_marginStart="@dimen/login_button_horizontal_margin"
         android:layout_marginTop="@dimen/login_textfield_button_spacing"
         android:layout_marginEnd="@dimen/login_button_horizontal_margin"
-        app:layout_constraintTop_toBottomOf="@id/txtV_MdP_Oublier"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_login_psd"
         android:background="@drawable/buttons"
 
 
