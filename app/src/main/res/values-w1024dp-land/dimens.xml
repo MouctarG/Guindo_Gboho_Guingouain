@@ -6,10 +6,21 @@
     <dimen name="inscription_textfield_height">70dp</dimen>
     <dimen name="inscription_textfield_horizontal_margin">200dp</dimen>
     <dimen name="inscription_textfield_vertical_spacing">15dp</dimen>
-    <dimen name="inscription_header_bottom_spacing">80dp</dimen>
-    <dimen name="inscription_textfield_button_spacing">60dp</dimen>
+    <dimen name="inscription_header_bottom_spacing">50dp</dimen>
+    <dimen name="inscription_textfield_button_spacing">40dp</dimen>
     <dimen name="inscription_button_horizontal_margin">220dp</dimen>
     <dimen name="inscription_button_height">70dp</dimen>
+
+    <!-- Dimensions pour confirmation_commande_activity -->
+    <dimen name="confirmation_header_text_size">50sp</dimen>
+    <dimen name="confirmation_header_height">100dp</dimen>
+    <dimen name="confirmation_textfield_height">70dp</dimen>
+    <dimen name="confirmation_textfield_horizontal_margin">200dp</dimen>
+    <dimen name="confirmation_textfield_vertical_spacing">15dp</dimen>
+    <dimen name="confirmation_header_bottom_spacing">50dp</dimen>
+    <dimen name="confirmation_textfield_button_spacing">40dp</dimen>
+    <dimen name="confirmation_button_horizontal_margin">220dp</dimen>
+    <dimen name="confirmation_button_height">70dp</dimen>
 
     <!-- Dimensions pour main_activity -->
     <dimen name="main_logo_height">100dp</dimen>

@@ -33,13 +33,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_ins_prenom"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/confirmation_textfield_height"
         android:layout_marginStart="@dimen/confirmation_textfield_horizontal_margin"
         android:layout_marginTop="@dimen/confirmation_header_bottom_spacing"
-        android:layout_marginEnd="@dimen/confirmation_textfield_horizontal_margin"
+
         android:hint="@string/lbl_prenom"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
@@ -54,15 +54,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_ins_nom"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/confirmation_textfield_height"
-        android:layout_marginStart="@dimen/confirmation_textfield_horizontal_margin"
-        android:layout_marginTop="@dimen/confirmation_textfield_vertical_spacing"
         android:layout_marginEnd="@dimen/confirmation_textfield_horizontal_margin"
+        android:layout_marginTop="@dimen/confirmation_header_bottom_spacing"
+
         android:hint="@string/lbl_nom"
-        app:layout_constraintTop_toBottomOf="@id/txt_ins_prenom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/header">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_cmd_nom"
@@ -75,14 +75,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_ins_adresse"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/confirmation_textfield_height"
         android:layout_marginStart="@dimen/confirmation_textfield_horizontal_margin"
         android:layout_marginTop="@dimen/confirmation_textfield_vertical_spacing"
-        android:layout_marginEnd="@dimen/confirmation_textfield_horizontal_margin"
+
         android:hint="@string/lbl_adresse"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ins_nom"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ins_prenom"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -96,15 +96,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_ins_phone"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/confirmation_textfield_height"
-        android:layout_marginStart="@dimen/confirmation_textfield_horizontal_margin"
+
         android:layout_marginTop="@dimen/confirmation_textfield_vertical_spacing"
         android:layout_marginEnd="@dimen/confirmation_textfield_horizontal_margin"
         android:hint="@string/lbl_phone"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ins_adresse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/txt_ins_nom"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_phone"
