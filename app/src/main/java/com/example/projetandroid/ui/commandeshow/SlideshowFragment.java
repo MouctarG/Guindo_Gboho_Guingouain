@@ -1,4 +1,4 @@
-package com.example.projetandroid.ui.commandehow;
+package com.example.projetandroid.ui.commandeshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

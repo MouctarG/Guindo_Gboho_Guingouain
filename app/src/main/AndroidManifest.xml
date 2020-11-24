@@ -19,8 +19,6 @@
 
         </activity>
         <activity android:name=".ConfirmationCommandeActivity" />
-        <activity android:name=".CommandeActivity" />
-        <activity android:name=".SearchArticleActivity" />
         <activity android:name=".PanierActivity" />
         <activity android:name=".ProductsActivity" />
         <activity android:name=".PasswordOublierActivity" />

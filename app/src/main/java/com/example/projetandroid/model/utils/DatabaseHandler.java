@@ -58,6 +58,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public static final String TABLE_COMMANDE_DROP = "DROP TABLE IF EXISTS " + TABLE_COMMANDE + ";";
 
+    public static final String TABLE_REMEMBER = "remember";
+
+    public static final String TABLE_REMEMBER_DROP = "DROP TABLE IF EXISTS " + TABLE_REMEMBER + ";";
 
     public static final String DATABASE_NAME = "users.db";
     public static final int DATABASE_VERSION = 1;
@@ -101,6 +104,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     ");";
 
 
+    String requeteCreateTableRemember =
+            "CREATE TABLE " + TABLE_REMEMBER + " ( " +
+                    COLUMN_LOGIN + " INTEGER NOT NULL ," +
+                    COLUMN_PASSWORD + " TEXT NOT NULL " +
+                    ");";
+
     public DatabaseHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -120,6 +129,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(requeteCreateTableUser);
         db.execSQL(requeteCreateTablePanier);
         db.execSQL(requeteCreateTableCommande);
+        db.execSQL(requeteCreateTableRemember);
     }
 
     @Override
@@ -127,6 +137,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE_USER_DROP);
         db.execSQL(TABLE_PANIER_DROP);
         db.execSQL(TABLE_COMMANDE_DROP);
+        db.execSQL(TABLE_REMEMBER_DROP);
         onCreate(db);
     }
 
@@ -372,4 +383,46 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return commandes;
     }
 
+
+    public boolean checkRemember() {
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_REMEMBER;
+
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor.getCount() > 0;
+    }
+
+    public void addUserRemember(User user) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_LOGIN, user.getLogin());
+        contentValues.put(COLUMN_PASSWORD, user.getPassword());
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_REMEMBER, null, contentValues);
+        db.close();
+
+    }
+
+    public void updateUserRemember(String login, String newPassword) {
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "UPDATE " + TABLE_REMEMBER + " SET " + COLUMN_PASSWORD + "=\"" + newPassword
+                + "\"" + " , " + COLUMN_LOGIN + "=\"" + login +
+                "\" ";
+        db.execSQL(query);
+
+    }
+
+    public User getUserRemember() {
+        User user = null;
+
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_REMEMBER;
+
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            user = new User(cursor.getString(cursor.getColumnIndex(COLUMN_LOGIN)),
+                    cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)));
+        }
+        return user;
+    }
 }
