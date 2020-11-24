@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
  * A simple {@link Fragment} subclass.
  * <p>
  * create an instance of this fragment.
+ * Pour afficher le detail d'un article
  */
 public class ArticleDetailFragment extends Fragment {
 
@@ -90,6 +91,9 @@ public class ArticleDetailFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Ajoute dans le panier un article
+     */
     public void addToPanier() {
         name = product_detail_name.getText().toString();
         prix = product_detail_price.getText().toString();

@@ -17,6 +17,10 @@ import com.example.projetandroid.model.utils.beans.ArticleTypes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Adapter d'un article permettant son affichage avec un RecyclerView
+ * (permet d'indiquer au RecyclerView à quoi va ressembler une ligne )
+ */
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
     private List<ArticleTypes> articleTypes;
     ArticleTypeClickListener clickListener;

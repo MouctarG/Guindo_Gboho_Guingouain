@@ -11,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.projetandroid.model.User;
 import com.example.projetandroid.model.utils.DatabaseHandler;
 
-
+/**
+ * Permet la creation d'un nouveau compte client
+ */
 public class InscriptionActivity extends AppCompatActivity {
     EditText edit_ins_psd;
     EditText edit_ins_mdp;
@@ -31,6 +33,12 @@ public class InscriptionActivity extends AppCompatActivity {
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
         ;
     }
+
+    /**
+     * Enregistre les informations du nouveau compte dans la base de données
+     *
+     * @param view
+     */
 
     public void creerCompte(View view) {
         int duration = Toast.LENGTH_SHORT;

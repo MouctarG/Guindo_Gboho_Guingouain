@@ -2,6 +2,9 @@ package com.example.projetandroid.model.utils.beans;
 
 import java.util.List;
 
+/**
+ * Pour faire le binding avec le json  d'un type categorie du serveur (Api)
+ */
 public class CategoriesTypes {
     private String id;
     private String name;

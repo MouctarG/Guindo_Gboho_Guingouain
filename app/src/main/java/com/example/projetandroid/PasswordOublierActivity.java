@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.projetandroid.model.User;
 import com.example.projetandroid.model.utils.DatabaseHandler;
 
+/**
+ * Permet la modificqtion du mot de passe en cas d'oublie
+ */
 public class PasswordOublierActivity extends AppCompatActivity {
     EditText edit_psd;
     EditText edit_mdp;
@@ -29,6 +32,11 @@ public class PasswordOublierActivity extends AppCompatActivity {
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
     }
 
+    /**
+     * la mise a jour du mot de passe si le login d'utilisateur est valide
+     *
+     * @param view
+     */
     public void updatePassword(View view) {
         int duration = Toast.LENGTH_SHORT;
 

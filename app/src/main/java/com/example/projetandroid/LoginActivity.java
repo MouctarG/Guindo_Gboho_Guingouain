@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.projetandroid.model.User;
 import com.example.projetandroid.model.utils.DatabaseHandler;
 
+/**
+ * Permet de se connecter à l'application
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edit_log_psd;
@@ -28,6 +31,11 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Verfication de l'existance d'un compte utilisateur et la connexion à l'application
+     *
+     * @param view
+     */
     public void seConnecter(View view) {
         String str_psd = edit_log_psd.getText().toString();
         String str_mdp = edit_log_mpd.getText().toString();
@@ -53,6 +61,12 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     }
+
+    /**
+     * La redirection vers l'activite mot de passe oublier
+     *
+     * @param view
+     */
 
     public void motDPasseOublier(View view) {
         Intent intent = new Intent(LoginActivity.this, PasswordOublierActivity.class);

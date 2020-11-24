@@ -2,6 +2,9 @@ package com.example.projetandroid.model.utils.beans;
 
 import java.util.List;
 
+/**
+ * Binding avec le json image du serveur (Api)
+ */
 public class Image {
     private String caption;
     private List<Sizes> sizes;

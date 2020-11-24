@@ -1,5 +1,6 @@
 package com.example.projetandroid.model;
 
+
 public class ItemPanierProduct {
     private String name;
     private String articleId;
@@ -18,7 +19,6 @@ public class ItemPanierProduct {
         this.image_url = image_url;
         this.description = description;
     }
-
 
 
     public String getImage_url() {

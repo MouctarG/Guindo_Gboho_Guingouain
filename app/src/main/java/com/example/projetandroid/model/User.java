@@ -1,5 +1,8 @@
 package com.example.projetandroid.model;
 
+/**
+ * class d'utilisateur
+ */
 public class User {
     private String login;
     private String password;

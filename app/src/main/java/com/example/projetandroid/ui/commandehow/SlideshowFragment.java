@@ -1,4 +1,4 @@
-package com.example.projetandroid.ui.slideshow;
+package com.example.projetandroid.ui.commandehow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +18,9 @@ import com.example.projetandroid.view.CommandeAdapter;
 
 import java.util.List;
 
+/**
+ * Listing de tous les commandes deja effectuer
+ */
 public class SlideshowFragment extends Fragment {
 
     CommandeAdapter commandeAdapter;

@@ -27,11 +27,13 @@ import java.util.List;
 
 import static com.example.projetandroid.MainActivity.CLE_CATEGORY_CHOICE;
 
+/**
+ * Fragment affichant la liste  des diffrentes categories
+ */
 public class HomeFragment extends Fragment implements CategoryClickListener {
     CategorieAdapter categorieAdapter;
     RecyclerView rv_category;
     private List<CategoriesTypes> lesCategories;
-    private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +49,12 @@ public class HomeFragment extends Fragment implements CategoryClickListener {
         return root;
     }
 
+    /**
+     * Interception du clique sur une categorie et la redirection vers ProductsActivity
+     * qui va se charger de leur l'affichage
+     *
+     * @param categoriesTypes
+     */
     @Override
     public void onClick(CategoriesTypes categoriesTypes) {
         Intent intent = new Intent(getContext(), ProductsActivity.class);

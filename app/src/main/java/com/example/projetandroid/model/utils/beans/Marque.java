@@ -1,5 +1,8 @@
 package com.example.projetandroid.model.utils.beans;
 
+/**
+ * Binding avec le json Brand du serveur (Api)
+ */
 public class Marque {
 
     private String id;

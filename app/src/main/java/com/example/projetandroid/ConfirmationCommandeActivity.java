@@ -16,6 +16,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * La confirmation d'une commande et sa sauvegarde dans la base de données
+ */
 public class ConfirmationCommandeActivity extends AppCompatActivity {
 
     EditText edit_cmd_prenom;
@@ -41,6 +44,11 @@ public class ConfirmationCommandeActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * L'enregistrement de la commande dans la base de données
+     *
+     * @param view
+     */
     public void confirmation(View view) {
         String nom = edit_cmd_nom.getText().toString();
         String prenom = edit_cmd_prenom.getText().toString();
@@ -64,6 +72,10 @@ public class ConfirmationCommandeActivity extends AppCompatActivity {
                 .show();
     }
 
+
+    /**
+     * @return le nom de tous les articles dans le panier
+     */
     private String getToStringArticle() {
         List<ItemPanierProduct> panierProductList =
                 databaseHandler.getItemsPanier(LoginActivity.LOGIN_USER);

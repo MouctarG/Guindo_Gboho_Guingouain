@@ -14,6 +14,10 @@ import com.example.projetandroid.model.ItemPanierProduct;
 
 import java.util.List;
 
+/**
+ * Adapter du panier  permettant son affichage avec un RecyclerView
+ * (permet d'indiquer au RecyclerView à quoi va ressembler une ligne )
+ */
 public class PanierItemsAdapter extends RecyclerView.Adapter<PanierItemsAdapter.ViewHolder> {
     private List<ItemPanierProduct> articles_panier;
     ItemPanierClickListener clickListener;

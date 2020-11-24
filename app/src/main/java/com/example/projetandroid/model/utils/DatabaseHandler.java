@@ -18,8 +18,12 @@ import com.example.projetandroid.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Gestionnaire de la base de donneés Sqlite (creation , insertion, modification ou suppression)
+ * selon les actions
+ */
 public class DatabaseHandler extends SQLiteOpenHelper {
+    // Table User : table des utilisateur
     public static final String TABLE_USER = "user";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_LOGIN = "login";
@@ -27,8 +31,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String TABLE_USER_DROP = "DROP TABLE IF EXISTS " + TABLE_USER + ";";
 
 
-    //TABLE PANIER
-
+    //Table panier
     public static final String TABLE_PANIER = "panier";
     public static final String COLUMN_ID_PANIER = "id";
     public static final String COLUMN_LOGIN_USER = "login_id";
@@ -41,7 +44,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String TABLE_PANIER_DROP = "DROP TABLE IF EXISTS " + TABLE_PANIER + ";";
 
 
-    //TABLE COMMANDE
+    //Table commande
 
     public static final String TABLE_COMMANDE = "commande";
     public static final String COLUMN_ID_COMMANDE = "id_commande";
@@ -60,6 +63,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
 
 
+    // Requete pour la creation de la table panier
     String requeteCreateTablePanier =
             "CREATE TABLE " + TABLE_PANIER + " ( " +
                     COLUMN_ID_PANIER + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -72,6 +76,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     COLUMN_IMG_URL + " TEXT NOT NULL " +
                     ");";
 
+
+    // Requete pour la creation de la table user
     String requeteCreateTableUser =
             "CREATE TABLE " + TABLE_USER + " ( " +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -80,6 +86,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     ");";
 
 
+    // Requete pour la creation de la table commande
     String requeteCreateTableCommande =
             "CREATE TABLE " + TABLE_COMMANDE + " ( " +
                     COLUMN_ID_COMMANDE + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -123,6 +130,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * Ajout  d'un utilisateur dans la table user
+     *
+     * @param user
+     */
     public void addUser(User user) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LOGIN, user.getLogin());
@@ -133,11 +145,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Suppression d'un utilisateur
+     *
+     * @param pseudo
+     */
     public void deleteUser(String pseudo) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_USER + " WHERE " + COLUMN_LOGIN + "=\"" + pseudo + "\"");
     }
 
+    /**
+     * Verifie l'existance d'un utilisateur
+     *
+     * @param pseudo
+     * @param password
+     * @return
+     */
     public User checkUser(String pseudo, String password) {
         User user = null;
 
@@ -153,6 +177,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return user;
     }
 
+    /**
+     * La mis a jour du mot de passe
+     *
+     * @param login
+     * @param newPassword
+     */
     public void updatePassword(String login, String newPassword) {
         SQLiteDatabase db = getWritableDatabase();
         String query = "UPDATE " + TABLE_USER + " SET " + COLUMN_PASSWORD + "=\"" + newPassword
@@ -177,7 +207,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return user;
     }
 
-
+    /**
+     * Ajout d'un article dans la table panier
+     *
+     * @param product
+     * @param loginUser
+     */
     public void addInPanier(ItemPanierProduct product, String loginUser) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LOGIN_USER, loginUser);
@@ -192,6 +227,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Suppression d'un article dans le panier
+     *
+     * @param name
+     */
     public void deleteItemPanier(String name) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_PANIER + " WHERE " + COLUMN_NAME_ARTICLE + "=\"" + name + "\"");
@@ -206,6 +246,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
+    /**
+     * @param loginUser
+     * @return la liste des articles dans le panrier
+     */
 
     public List<ItemPanierProduct> getItemsPanier(String loginUser) {
         User user = null;
@@ -237,6 +281,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return panierProductList;
     }
 
+    /**
+     * @param name
+     * @return true si le nom passe en parametre est dans le panier sinon false
+     */
     public boolean checkArticle(String name) {
         SQLiteDatabase db = getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_PANIER + " WHERE " + COLUMN_NAME_ARTICLE + "=\"" + name +
@@ -246,11 +294,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return cursor.getCount() > 0;
     }
 
+    /**
+     * Suppression du panier
+     *
+     * @param login_user
+     */
+
     public void deletePanier(String login_user) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_PANIER + " WHERE " + COLUMN_LOGIN_USER + "=\"" + login_user + "\"");
     }
 
+    /**
+     * Ajout d'une commande dans la table commande
+     *
+     * @param nomArticle
+     * @param prenom
+     * @param nom
+     * @param adresse
+     * @param phone
+     * @param date
+     * @param montant
+     * @param loginUser
+     */
     public void addCommande(String nomArticle, String prenom, String nom, String adresse,
                             String phone, String date,
                             String montant, String loginUser) {
@@ -268,6 +334,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * @param loginUser
+     * @return tous les commandes enregistrer
+     */
     public List<Commande> getAllCommande(String loginUser) {
 
         List<Commande> commandes = new ArrayList<>();

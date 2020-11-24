@@ -13,6 +13,10 @@ import com.example.projetandroid.view.ArticleAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utilise deux fragments ListArticleFragment permettant l'affichage de la liste des articles selon
+ * les categories
+ */
 public class ProductsActivity extends AppCompatActivity implements ArticleTypeClickListener {
 
     ListArticleFragment articleFragment;
@@ -86,6 +90,11 @@ public class ProductsActivity extends AppCompatActivity implements ArticleTypeCl
         }
     }
 
+    /**
+     * L'interception du clique sur l'article et affiche le detail
+     *
+     * @param articleTypes
+     */
     @Override
     public void onClick(ArticleTypes articleTypes) {
         Bundle b = new Bundle();

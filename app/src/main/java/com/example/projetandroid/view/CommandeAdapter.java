@@ -13,6 +13,10 @@ import com.example.projetandroid.model.utils.Commande;
 
 import java.util.List;
 
+/**
+ * Adapter d'une commande (liste des commandes passee permettant son affichage avec un RecyclerView
+ * (permet d'indiquer au RecyclerView à quoi va ressembler une ligne )
+ */
 public class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapter.ViewHolder> {
     List<Commande> commandes;
 

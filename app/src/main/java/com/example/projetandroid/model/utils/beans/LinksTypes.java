@@ -1,5 +1,8 @@
 package com.example.projetandroid.model.utils.beans;
 
+/**
+ * Pour faire le binding avec le json Links du serveur (Api)
+ */
 public class LinksTypes {
     private String href;
     private String rel;

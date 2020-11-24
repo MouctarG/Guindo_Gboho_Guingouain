@@ -28,6 +28,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utilisé par SearchArticleActivity pour le listing des articles selon un motif de recherche
+ */
 public class SearchFragment extends Fragment implements ArticleTypeClickListener {
 
     EditText edit_recherche;

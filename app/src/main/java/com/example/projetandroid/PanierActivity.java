@@ -21,6 +21,9 @@ import com.example.projetandroid.view.PanierItemsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Gestion du panier
+ */
 public class PanierActivity extends AppCompatActivity implements ItemPanierClickListener {
     private List<ItemPanierProduct> panierProductList;
     RecyclerView rv_panier;
@@ -73,6 +76,11 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
 
     }
 
+    /**
+     * Edition d'un article du panier (modification de la quantite ou suppression)
+     *
+     * @param itemPanierProduct
+     */
     @Override
     public void onClick(ItemPanierProduct itemPanierProduct) {
 
@@ -112,6 +120,10 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
 
     }
 
+    /**
+     * @param list
+     * @return la montant total des articles dans le panier
+     */
     private double calculMontantTotal(List<ItemPanierProduct> list) {
         double res = 0;
 
@@ -121,6 +133,11 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
         return res;
     }
 
+    /**
+     * Redirection vers ConfirmationCommmandeActivity
+     *
+     * @param view
+     */
     public void goToConfirmation(View view) {
         Intent intent = new Intent(PanierActivity.this, ConfirmationCommandeActivity.class);
 

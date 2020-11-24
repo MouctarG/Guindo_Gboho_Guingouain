@@ -6,7 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ * Rediriger vers LoginActivity ou vers InscriptionActivity
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static final String CLE_CATEGORY_CHOICE = "CLE_CATEGORY_CHOICE";
@@ -138,11 +140,21 @@ public class MainActivity extends AppCompatActivity {
  */
 
 
+    /**
+     * Redirection vers LoginActivity
+     *
+     * @param view
+     */
     public void goToLoginActivity(View view) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Redirection vers InscriptionActivity
+     *
+     * @param view
+     */
     public void goToInscription(View view) {
         Intent intent = new Intent(MainActivity.this, InscriptionActivity.class);
         startActivity(intent);

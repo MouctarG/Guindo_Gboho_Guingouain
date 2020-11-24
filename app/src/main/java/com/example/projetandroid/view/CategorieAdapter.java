@@ -15,6 +15,10 @@ import com.example.projetandroid.model.utils.beans.CategoriesTypes;
 
 import java.util.ArrayList;
 
+/**
+ * Adapter d'une  Categorie permettant son affichage avec un RecyclerView
+ * (permet d'indiquer au RecyclerView à quoi va ressembler une ligne )
+ */
 public class CategorieAdapter extends RecyclerView.Adapter<CategorieAdapter.ViewHolder> {
 
     private ArrayList<CategoriesTypes> categoriesTypes;

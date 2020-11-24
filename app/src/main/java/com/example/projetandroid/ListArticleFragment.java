@@ -16,6 +16,8 @@ import com.example.projetandroid.view.ArticleAdapter;
 /**
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
+ * <p>
+ * Affichage de la liste des artiles en utilisant un RecyclerView
  */
 public class ListArticleFragment extends Fragment implements ArticleTypeClickListener {
     RecyclerView rv_list_article;

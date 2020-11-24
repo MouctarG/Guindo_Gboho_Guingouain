@@ -2,6 +2,9 @@ package com.example.projetandroid.model.utils.beans;
 
 import java.util.List;
 
+/**
+ * Pour faire le binding le json de type product detail retoune par le serveur
+ */
 public class ArticleDetails {
     private Marque brand;
     private String catalogName;

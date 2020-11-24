@@ -20,6 +20,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+/**
+ * HomeActivity : c'est l'activité principale, il represente le Home page de notre application
+ * il permet de naviguer entre entre trois fragments (les categotries, la recherche d'un
+ * article et la visualisation des commandes).
+ */
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;

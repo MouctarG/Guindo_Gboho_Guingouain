@@ -17,6 +17,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Pour la recherche d'un article soit par son nom ou soit par sa categorie
+ */
 public class SearchArticleActivity extends AppCompatActivity implements ArticleTypeClickListener {
     ListArticleFragment articlesFragment;
     List<ArticleTypes> articleTypesList;
