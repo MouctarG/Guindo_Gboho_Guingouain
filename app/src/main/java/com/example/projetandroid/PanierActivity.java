@@ -18,6 +18,7 @@ import com.example.projetandroid.model.ItemPanierProduct;
 import com.example.projetandroid.model.utils.DatabaseHandler;
 import com.example.projetandroid.view.PanierItemsAdapter;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
         setContentView(R.layout.activity_panier);
         panierProductList = new ArrayList<>();
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
-
+        val_prix_total_commande = findViewById(R.id.val_prix_total_commande);
         if (getIntent().getExtras() != null) {
             String id = getIntent().getExtras().getString("id");
             double prix = Double.parseDouble(getIntent().getExtras().getString("prix"));
@@ -50,14 +51,18 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
             String img_url = getIntent().getExtras().getString("image_url");
             String description = getIntent().getExtras().getString("description");
 
-
-            ItemPanierProduct panierProduct = new ItemPanierProduct(name, id, montant, qte, img_url, description);
+            ItemPanierProduct panierProduct = new ItemPanierProduct(name, id, prix, qte, img_url, description);
             if (!databaseHandler.checkArticle(panierProduct.getName())) {
                 databaseHandler.addInPanier(panierProduct, LoginActivity.LOGIN_USER);
-            } else databaseHandler.updateItemPanier(panierProduct);
+            } else {
+                databaseHandler.updateItemPanier(panierProduct);
+                panierProductList = databaseHandler.getItemsPanier(LoginActivity.LOGIN_USER);
+                double mTotal = calculMontantTotal(panierProductList);
+                val_prix_total_commande.setText(String.valueOf(mTotal));
+            }
 
         }
-        val_prix_total_commande = findViewById(R.id.val_prix_total_commande);
+
         panierProductList = databaseHandler.getItemsPanier(LoginActivity.LOGIN_USER);
         double mTotal = calculMontantTotal(panierProductList);
         val_prix_total_commande.setText(String.valueOf(mTotal));
@@ -126,10 +131,13 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
      */
     private double calculMontantTotal(List<ItemPanierProduct> list) {
         double res = 0;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
         for (ItemPanierProduct product : list)
-            res += product.getMontant();
+            res += product.getMontant() * product.getQuantite();
 
+        String formatted = decimalFormat.format(res);
+        res = Double.parseDouble(formatted);
         return res;
     }
 

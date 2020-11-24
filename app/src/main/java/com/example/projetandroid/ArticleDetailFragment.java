@@ -95,8 +95,8 @@ public class ArticleDetailFragment extends Fragment {
      * Ajoute dans le panier un article
      */
     public void addToPanier() {
-        name = product_detail_name.getText().toString();
-        prix = product_detail_price.getText().toString();
+        // name = product_detail_name.getText().toString();
+        //   prix = product_detail_price.getText().toString();
         quantite = product_detail_numberPicker.getValue();
         Intent intent = new Intent(getContext(), PanierActivity.class);
 

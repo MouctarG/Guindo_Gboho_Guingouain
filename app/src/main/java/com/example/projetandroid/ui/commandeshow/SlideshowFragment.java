@@ -37,8 +37,6 @@ public class SlideshowFragment extends Fragment {
         commandeAdapter = new CommandeAdapter(commandes);
         rv_commande.setAdapter(commandeAdapter);
         rv_commande.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
         return root;
     }
 }

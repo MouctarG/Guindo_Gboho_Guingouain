@@ -12,6 +12,7 @@ import com.example.projetandroid.Interface.ItemPanierClickListener;
 import com.example.projetandroid.R;
 import com.example.projetandroid.model.ItemPanierProduct;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -38,10 +39,11 @@ public class PanierItemsAdapter extends RecyclerView.Adapter<PanierItemsAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemPanierProduct product = articles_panier.get(position);
         holder.panier_product_name.setText(product.getName());
-        String strPrix = String.valueOf(product.getMontant());
-
         String strQte = String.valueOf(product.getQuantite());
-        holder.panier_product_price.setText(strPrix);
+        double montant = product.getMontant() * product.getQuantite();
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String formatted = decimalFormat.format(montant);
+        holder.panier_product_price.setText(formatted);
         holder.panier_product_qte_id.setText(strQte);
 
         holder.panier_items_root.setOnClickListener(new View.OnClickListener() {
