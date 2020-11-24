@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -147,9 +148,11 @@ public class PanierActivity extends AppCompatActivity implements ItemPanierClick
      * @param view
      */
     public void goToConfirmation(View view) {
-        Intent intent = new Intent(PanierActivity.this, ConfirmationCommandeActivity.class);
+        if (!panierProductList.isEmpty()) {
+            Intent intent = new Intent(PanierActivity.this, ConfirmationCommandeActivity.class);
 
-        intent.putExtra("valeurTotal", val_prix_total_commande.getText().toString());
-        startActivity(intent);
+            intent.putExtra("valeurTotal", val_prix_total_commande.getText().toString());
+            startActivity(intent);
+        } else Toast.makeText(this, getText(R.string.txt_panier_vide), Toast.LENGTH_LONG).show();
     }
 }
