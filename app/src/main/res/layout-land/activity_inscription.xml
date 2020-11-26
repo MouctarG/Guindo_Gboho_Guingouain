@@ -33,14 +33,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_ins_pseudo"
-        android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.45"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/inscription_textfield_height"
         android:layout_marginStart="@dimen/inscription_textfield_horizontal_margin"
+        android:layout_marginEnd="@dimen/inscription_textfield_horizontal_margin"
         android:layout_marginTop="@dimen/inscription_header_bottom_spacing"
 
         android:hint="@string/lbl_pseudo"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -54,38 +55,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txt_insDate"
-        android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.45"
-        android:layout_height="@dimen/inscription_textfield_height"
-        android:layout_marginStart="@dimen/inscription_textfield_horizontal_margin"
-        android:layout_marginTop="@dimen/inscription_textfield_vertical_spacing"
-
-        android:hint="@string/lbl_date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ins_pseudo">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_ins_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:inputType="date" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_insMdp"
         android:layout_width="0dp"
         app:layout_constraintWidth_percent="0.45"
         android:layout_height="@dimen/inscription_textfield_height"
-        android:layout_marginTop="@dimen/inscription_header_bottom_spacing"
-        android:layout_marginEnd="@dimen/inscription_textfield_horizontal_margin"
+        android:layout_marginTop="@dimen/inscription_textfield_vertical_spacing"
+        android:layout_marginStart="@dimen/inscription_textfield_horizontal_margin"
         android:hint="@string/lbl_mdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_ins_pseudo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_ins_mdp"
@@ -107,7 +85,7 @@
         android:layout_marginEnd="@dimen/inscription_textfield_horizontal_margin"
         android:hint="@string/lbl_mdp_confirm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_insMdp">
+        app:layout_constraintTop_toBottomOf="@id/txt_ins_pseudo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_ins_mdp_confirm"

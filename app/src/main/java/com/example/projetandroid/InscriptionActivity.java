@@ -18,7 +18,6 @@ public class InscriptionActivity extends AppCompatActivity {
     EditText edit_ins_psd;
     EditText edit_ins_mdp;
     EditText edit_ins_mdp_confirm;
-    EditText edit_ins_date;
     DatabaseHandler databaseHandler;
 
 
@@ -29,9 +28,7 @@ public class InscriptionActivity extends AppCompatActivity {
         edit_ins_psd = findViewById(R.id.edit_ins_psd);
         edit_ins_mdp = findViewById(R.id.edit_ins_mdp);
         edit_ins_mdp_confirm = (EditText) findViewById(R.id.edit_ins_mdp_confirm);
-        edit_ins_date = findViewById(R.id.edit_ins_date);
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
-        ;
     }
 
     /**
@@ -48,7 +45,6 @@ public class InscriptionActivity extends AppCompatActivity {
         String str_psd = edit_ins_psd.getText().toString();
         String str_mdp_corfirm = edit_ins_mdp_confirm.getText().toString();
         String str_mdp = edit_ins_mdp.getText().toString();
-        String str_date = edit_ins_date.getText().toString();
 
         if (str_psd.trim().length() == 0 || str_mdp.trim().length() == 0 || str_mdp_corfirm.trim().length() == 0)
             toast.show();

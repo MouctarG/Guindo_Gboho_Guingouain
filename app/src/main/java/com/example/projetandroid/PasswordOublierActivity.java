@@ -18,7 +18,6 @@ public class PasswordOublierActivity extends AppCompatActivity {
     EditText edit_psd;
     EditText edit_mdp;
     EditText edit_mdp_confirm;
-    EditText edit_date;
     DatabaseHandler databaseHandler;
 
     @Override
@@ -28,7 +27,6 @@ public class PasswordOublierActivity extends AppCompatActivity {
         edit_psd = findViewById(R.id.edit_pass_psd);
         edit_mdp = findViewById(R.id.edit_passw_mdp);
         edit_mdp_confirm = findViewById(R.id.edit_pass_mdp_confirm);
-        edit_date = findViewById(R.id.edit_pass_date);
         databaseHandler = new DatabaseHandler(this, DatabaseHandler.DATABASE_NAME, null, DatabaseHandler.DATABASE_VERSION);
     }
 
@@ -45,7 +43,6 @@ public class PasswordOublierActivity extends AppCompatActivity {
         String str_psd = edit_psd.getText().toString();
         String str_mdp_corfirm = edit_mdp_confirm.getText().toString();
         String str_mdp = edit_mdp.getText().toString();
-        String str_date = edit_date.getText().toString();
 
         if (str_psd.trim().length() == 0 || str_mdp.trim().length() == 0 || str_mdp_corfirm.trim().length() == 0)
             toast.show();

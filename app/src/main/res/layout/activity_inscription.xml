@@ -100,29 +100,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txt_insDate"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/inscription_textfield_height"
-        android:layout_marginStart="@dimen/inscription_textfield_horizontal_margin"
-        android:layout_marginTop="@dimen/inscription_textfield_vertical_spacing"
-        android:layout_marginEnd="@dimen/inscription_textfield_horizontal_margin"
-        android:hint="@string/lbl_date"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Confirm_insMdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_ins_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:inputType="date" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/btn_ins_enregister"
         android:layout_width="match_parent"
@@ -137,5 +114,5 @@
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_insDate" />
+        app:layout_constraintTop_toBottomOf="@id/txt_Confirm_insMdp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
